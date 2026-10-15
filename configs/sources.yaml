@@ -1,0 +1,41 @@
+sources:
+  - id: ssiam_fund_page
+    owner: SSI Asset Management
+    title: SSIAM VN30 ETF fund information
+    url: https://ssiam.com.vn/en/fund-information-VN30
+    purpose: current NAV, creation basket, benchmark and disclosure register
+    authority: issuer
+
+  - id: ssiam_september_2026_factsheet
+    owner: SSI Asset Management
+    title: ETF Funds Performance Report September 2026
+    url: https://ssiam.com.vn/upload/files/QuanLyQuy/ETF%20Monthly%20Report%20September%202026.pdf
+    publication_date: 2026-10-07
+    as_of_date: 2026-09-30
+    relevant_pages:
+      - 8
+      - 9
+    purpose: frozen portfolio weights, sector allocation, fund and benchmark performance
+    authority: issuer
+
+  - id: hnx_vn30_futures_specification
+    owner: Hanoi Stock Exchange
+    title: VN30 Index Futures contract specification
+    url: https://cbtd.hnx.vn/vi-vn/huong-dan/chi-tiet-thu-tuc-36-65.html
+    purpose: contract multiplier, tick size, expiry convention and trading collar
+    authority: exchange
+
+  - id: basel_market_risk_backtesting
+    owner: Bank for International Settlements
+    title: Basel Framework MAR99 application guidance
+    url: https://www.bis.org/committees/bcbs/basel-framework/standard/mar/99/inforce/2019-12-15/published/2019-12-15
+    purpose: 250-observation 99 percent VaR backtesting zones
+    authority: standard_setter
+
+  - id: vndirect_finfo_prices
+    owner: VNDirect
+    title: Public Finfo market-price endpoint
+    url: https://api-finfo.vndirect.com.vn/v4/stock_prices
+    purpose: adjusted daily constituent-price history for reproducible analysis
+    authority: market_data_provider
+    limitation: not an official exchange record; refresh subject to provider availability and terms

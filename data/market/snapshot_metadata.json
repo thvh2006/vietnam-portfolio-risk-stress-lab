@@ -1,0 +1,161 @@
+{
+  "retrieved_at": "2026-10-13T07:06:54.510297+00:00",
+  "start_date": "2019-01-02",
+  "end_date": "2026-09-30",
+  "stock_endpoint": "https://api-finfo.vndirect.com.vn/v4/stock_prices",
+  "index_endpoint": "https://api-finfo.vndirect.com.vn/v4/vnmarket_prices",
+  "stock_rows": 54051,
+  "benchmark_rows": 1931,
+  "coverage": {
+    "ACB": {
+      "rows": 1926,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "BID": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "BSR": {
+      "rows": 1923,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "CTG": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "FPT": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "GAS": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "GVR": {
+      "rows": 1925,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "HDB": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "HPG": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "LPB": {
+      "rows": 1921,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "MBB": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "MCH": {
+      "rows": 1926,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "MSN": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "MWG": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "SAB": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "SHB": {
+      "rows": 1928,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "SSB": {
+      "rows": 1377,
+      "first_date": "2021-03-24",
+      "last_date": "2026-09-30"
+    },
+    "SSI": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "STB": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "TCB": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "TCX": {
+      "rows": 234,
+      "first_date": "2025-10-21",
+      "last_date": "2026-09-30"
+    },
+    "VCB": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "VHM": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "VIB": {
+      "rows": 1924,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "VIC": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "VJC": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "VNM": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "VPB": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    },
+    "VPL": {
+      "rows": 347,
+      "first_date": "2025-05-13",
+      "last_date": "2026-09-30"
+    },
+    "VRE": {
+      "rows": 1931,
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30"
+    }
+  }
+}

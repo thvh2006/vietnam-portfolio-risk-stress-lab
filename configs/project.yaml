@@ -1,0 +1,66 @@
+project:
+  name: vietnam-portfolio-risk-stress-lab
+  status: independent_risk_engine_built
+  intended_use: research_and_portfolio_demo
+
+decision:
+  persona: portfolio_risk_manager
+  audience: investment_committee
+  reference_portfolio: SSIAM_VN30_ETF
+  ticker: FUESSV30
+  benchmark: VN30
+  base_currency: VND
+  shadow_nav_vnd: 100000000000
+  valuation_frequency: end_of_day
+  information_cutoff: 2026-09-30
+  disclosure_date: 2026-10-07
+
+risk:
+  return_frequency: daily
+  estimation_windows:
+    primary_days: 500
+    recent_days: 250
+  measures:
+    - annualised_volatility
+    - historical_value_at_risk
+    - parametric_value_at_risk
+    - expected_shortfall
+    - maximum_drawdown
+    - component_risk
+    - beta_to_vn30
+    - tracking_error
+    - concentration
+    - liquidity_days_to_exit
+  confidence_levels:
+    - 0.95
+    - 0.99
+  scenarios:
+    - historical_replay
+    - hypothetical_sector_shock
+    - correlation_breakdown
+    - liquidity_haircut
+    - reverse_stress
+
+limits:
+  single_name_weight: 0.11
+  sector_weight: 0.40
+  top_five_weight: 0.45
+  one_day_var_99_nav: 0.035
+  ten_day_es_975_nav: 0.12
+  maximum_days_to_exit: 5
+  maximum_var_exceptions_250d_green: 4
+
+hedge:
+  instrument: VN30_INDEX_FUTURES
+  contract_multiplier_vnd_per_point: 100000
+  objective: reduce_market_risk_without_rewriting_constituent_weights
+
+governance:
+  snapshot_positions: true
+  preserve_reported_weights: true
+  normalise_only_in_analytical_layer: true
+  show_data_freshness: true
+  backtest_var: true
+  flag_short_history_assets: true
+  no_silent_proxying: true
+  no_hindsight_reweighting: true

@@ -1,0 +1,32 @@
+as_of_date,ticker,company,sector,reported_weight_pct,source_id,source_page
+2026-09-30,ACB,Asia Commercial Bank,Financials,3.82,ssiam_september_2026_factsheet,9
+2026-09-30,BID,Joint Stock Commercial Bank for Investment and Development of Vietnam,Financials,0.62,ssiam_september_2026_factsheet,9
+2026-09-30,BSR,Binh Son Refining and Petrochemical Joint Stock Company,Energy,1.07,ssiam_september_2026_factsheet,9
+2026-09-30,CTG,Vietnam Joint Stock Commercial Bank for Industry and Trade,Financials,1.28,ssiam_september_2026_factsheet,9
+2026-09-30,FPT,FPT Corporation,Information Technology,8.62,ssiam_september_2026_factsheet,9
+2026-09-30,GAS,PetroVietnam Gas Joint Stock Corporation,Utilities,0.84,ssiam_september_2026_factsheet,9
+2026-09-30,GVR,Vietnam Rubber Group JSC,Materials,0.45,ssiam_september_2026_factsheet,9
+2026-09-30,HDB,Ho Chi Minh City Development Joint Stock Commercial Bank,Financials,4.04,ssiam_september_2026_factsheet,9
+2026-09-30,HPG,Hoa Phat Group Joint Stock Company,Materials,8.72,ssiam_september_2026_factsheet,9
+2026-09-30,LPB,Loc Phat Vietnam Joint Stock Commercial Bank,Financials,4.34,ssiam_september_2026_factsheet,9
+2026-09-30,MBB,Military Commercial Joint Stock Bank,Financials,3.63,ssiam_september_2026_factsheet,9
+2026-09-30,MCH,Masan Consumer Corporation,Consumer Staples,3.10,ssiam_september_2026_factsheet,9
+2026-09-30,MSN,Masan Group Corporation,Consumer Staples,5.16,ssiam_september_2026_factsheet,9
+2026-09-30,MWG,Mobile World Investment Corporation,Consumer Discretionary,6.84,ssiam_september_2026_factsheet,9
+2026-09-30,SAB,Saigon Beer Alcohol Beverage Corporation,Consumer Staples,0.51,ssiam_september_2026_factsheet,9
+2026-09-30,SHB,Saigon Hanoi Commercial Joint Stock Bank,Financials,1.59,ssiam_september_2026_factsheet,9
+2026-09-30,SSB,Southeast Asia Commercial Joint Stock Bank,Financials,1.26,ssiam_september_2026_factsheet,9
+2026-09-30,SSI,SSI Securities Corporation,Financials,1.55,ssiam_september_2026_factsheet,9
+2026-09-30,STB,Saigon Thuong Tin Commercial Joint Stock Bank,Financials,4.86,ssiam_september_2026_factsheet,9
+2026-09-30,TCB,Vietnam Technological and Commercial Joint Stock Bank,Financials,4.65,ssiam_september_2026_factsheet,9
+2026-09-30,TCX,Techcom Securities Joint Stock Company,Financials,0.53,ssiam_september_2026_factsheet,9
+2026-09-30,VCB,Joint Stock Commercial Bank for Foreign Trade of Vietnam,Financials,1.95,ssiam_september_2026_factsheet,9
+2026-09-30,VHM,Vinhomes JSC,Real Estate,4.37,ssiam_september_2026_factsheet,9
+2026-09-30,VIB,Vietnam International Commercial Joint Stock Bank,Financials,1.00,ssiam_september_2026_factsheet,9
+2026-09-30,VIC,Vingroup Joint Stock Company,Real Estate,10.62,ssiam_september_2026_factsheet,9
+2026-09-30,VJC,Vietjet Aviation Joint Stock Company,Industrials,3.03,ssiam_september_2026_factsheet,9
+2026-09-30,VNM,Vietnam Dairy Products Joint Stock Company,Consumer Staples,4.24,ssiam_september_2026_factsheet,9
+2026-09-30,VPB,Vietnam Prosperity Joint Stock Commercial Bank,Financials,4.72,ssiam_september_2026_factsheet,9
+2026-09-30,VPL,Vinpearl Joint Stock Company,Consumer Discretionary,0.55,ssiam_september_2026_factsheet,9
+2026-09-30,VRE,Vincom Retail Joint Stock Company,Real Estate,1.89,ssiam_september_2026_factsheet,9
+2026-09-30,CASH,Cash and other net assets,Cash,0.17,ssiam_september_2026_factsheet,8
