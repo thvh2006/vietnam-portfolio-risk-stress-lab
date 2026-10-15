@@ -1,0 +1,31 @@
+ticker,sector,first_date,last_date,raw_price_rows,usable_returns_last_500,missing_quote_days_after_listing,primary_500d_method,recent_250d_method
+ACB,Financials,2019-01-02,2026-09-30,1926,500,5,own,own
+BID,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
+BSR,Energy,2019-01-02,2026-09-30,1923,500,8,own,own
+CTG,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
+FPT,Information Technology,2019-01-02,2026-09-30,1931,500,0,own,own
+GAS,Utilities,2019-01-02,2026-09-30,1931,500,0,own,own
+GVR,Materials,2019-01-02,2026-09-30,1925,500,6,own,own
+HDB,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
+HPG,Materials,2019-01-02,2026-09-30,1931,500,0,own,own
+LPB,Financials,2019-01-02,2026-09-30,1921,500,10,own,own
+MBB,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
+MCH,Consumer Staples,2019-01-02,2026-09-30,1926,500,5,own,own
+MSN,Consumer Staples,2019-01-02,2026-09-30,1931,500,0,own,own
+MWG,Consumer Discretionary,2019-01-02,2026-09-30,1931,500,0,own,own
+SAB,Consumer Staples,2019-01-02,2026-09-30,1931,500,0,own,own
+SHB,Financials,2019-01-02,2026-09-30,1928,500,3,own,own
+SSB,Financials,2021-03-24,2026-09-30,1377,500,0,own,own
+SSI,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
+STB,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
+TCB,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
+TCX,Financials,2025-10-21,2026-09-30,234,233,0,sector_proxy,sector_proxy
+VCB,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
+VHM,Real Estate,2019-01-02,2026-09-30,1931,500,0,own,own
+VIB,Financials,2019-01-02,2026-09-30,1924,500,7,own,own
+VIC,Real Estate,2019-01-02,2026-09-30,1931,500,0,own,own
+VJC,Industrials,2019-01-02,2026-09-30,1931,500,0,own,own
+VNM,Consumer Staples,2019-01-02,2026-09-30,1931,500,0,own,own
+VPB,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
+VPL,Consumer Discretionary,2025-05-13,2026-09-30,347,346,0,sector_proxy,own
+VRE,Real Estate,2019-01-02,2026-09-30,1931,500,0,own,own

@@ -1,0 +1,4658 @@
+{
+  "case": {
+    "as_of": "2026-09-30",
+    "portfolio": "FUESSV30 current-weight shadow mandate",
+    "shadow_nav_vnd": 100000000000,
+    "benchmark": "VN30",
+    "reported_weight_total": 1.0001999999999998,
+    "analytical_weight_total": 0.9999999999999999,
+    "cash_weight": 0.0016996600679864025
+  },
+  "risk": {
+    "primary_500d": {
+      "observations": 500,
+      "annualised_volatility": 0.20188336764688755,
+      "historical_var_95": 0.01807070349520119,
+      "historical_var_99": 0.033933741333464384,
+      "historical_es_975": 0.04149302170707898,
+      "historical_es_99": 0.06189988979279237,
+      "parametric_var_99": 0.028676304168082416,
+      "cornish_fisher_var_99": 0.04158112516408122,
+      "skewness": -0.7969511574776663,
+      "excess_kurtosis": 7.869392472783751,
+      "annualised_downside_deviation": 0.14469637538320132,
+      "daily_mean": 0.0009089243677721955,
+      "ewma_94_annualised_volatility": 0.14207297503887928
+    },
+    "recent_250d": {
+      "observations": 250,
+      "annualised_volatility": 0.20588403964220817,
+      "historical_var_95": 0.02047469218779195,
+      "historical_var_99": 0.03245240845697555,
+      "historical_es_975": 0.03882199514562819,
+      "historical_es_99": 0.051738078287152794,
+      "parametric_var_99": 0.02984302881898116,
+      "cornish_fisher_var_99": 0.03319368736232555,
+      "skewness": -0.6821077473291093,
+      "excess_kurtosis": 3.9994108362712444,
+      "annualised_downside_deviation": 0.1504087146531307,
+      "daily_mean": 0.00032848276068306716,
+      "ewma_94_annualised_volatility": 0.1416962737145947
+    },
+    "ten_day_es_975_sqrt_time": 0.1227659279721853,
+    "beta_to_vn30": 0.9883424584394561,
+    "tracking_error_annualised": 0.023492902380292162,
+    "maximum_drawdown_full_replay": -0.42980188744275927,
+    "diversification_ratio": 1.6394298160870535,
+    "weighted_standalone_volatility": 0.3309736122923719,
+    "average_pairwise_correlation_500d": 0.3675995251119915,
+    "average_pairwise_correlation_recent_60d": 0.35415450959073835,
+    "benchmark_annualised_volatility": 0.20289094837734828,
+    "portfolio_benchmark_annualised_covariance": 0.04068485730182915
+  },
+  "concentration": {
+    "largest_name": "VIC",
+    "largest_name_weight": 0.10617876424715053,
+    "largest_sector": "Financials",
+    "largest_sector_weight": 0.39832033593281335,
+    "top_five_weight": 0.39952009598080374,
+    "hhi": 0.05424747883856541,
+    "sector_weights": {
+      "Cash": 0.0016996600679864025,
+      "Consumer Discretionary": 0.0738852229554089,
+      "Consumer Staples": 0.13007398520295937,
+      "Energy": 0.010697860427914416,
+      "Financials": 0.39832033593281335,
+      "Industrials": 0.03029394121175764,
+      "Information Technology": 0.08618276344731052,
+      "Materials": 0.09168166366726653,
+      "Real Estate": 0.1687662467506498,
+      "Utilities": 0.008398320335932812
+    }
+  },
+  "stress": {
+    "worst_1d": {
+      "start": "2020-03-09",
+      "end": "2020-03-09",
+      "return": -0.07227223887474465
+    },
+    "worst_5d": {
+      "start": "2025-04-02",
+      "end": "2025-04-09",
+      "return": -0.15370756734945845
+    },
+    "worst_20d": {
+      "start": "2020-03-04",
+      "end": "2020-03-31",
+      "return": -0.2844431725908332
+    },
+    "vietnam_2022_replay": {
+      "start": "2022-04-04",
+      "end": "2022-11-15",
+      "observations": 157,
+      "return": -0.41553797985233054
+    },
+    "september_2026_replay": {
+      "start": "2026-08-31",
+      "end": "2026-09-30",
+      "observations": 20,
+      "return": -0.037043654052563935
+    },
+    "hypothetical_sector_shock": -0.1764057188562287,
+    "hypothetical_sector_vector": {
+      "Financials": -0.18,
+      "Real Estate": -0.25,
+      "Materials": -0.2,
+      "Information Technology": -0.15,
+      "Consumer Discretionary": -0.17,
+      "Consumer Staples": -0.1,
+      "Industrials": -0.14,
+      "Energy": -0.08,
+      "Utilities": -0.07,
+      "Cash": 0.0
+    },
+    "correlation_one_parametric_var_99": 0.04850290577742957,
+    "reverse_stress_vn30_shock_for_15pct_loss": -0.1517692564142621
+  },
+  "backtest": {
+    "lookback": 250,
+    "evaluation_observations": 250,
+    "exceptions": 2,
+    "zone": "green",
+    "kupiec_pof": {
+      "likelihood_ratio": 0.10843521623679919,
+      "p_value": 0.7419327009526282,
+      "observed_rate": 0.008
+    }
+  },
+  "hedge": {
+    "index_level_proxy": 1906.81,
+    "contract_multiplier": 100000,
+    "contract_notional_vnd": 190681000.0,
+    "current_beta": 0.9883424584394561,
+    "target_beta": 0.7,
+    "raw_short_contracts": 151.21719439244401,
+    "rounded_short_contracts": 151,
+    "residual_beta": 0.7004141484394562,
+    "comparison": {
+      "unhedged_annualised_volatility": 0.20188336764688755,
+      "hedged_annualised_volatility": 0.1440170755140282,
+      "unhedged_var_99": 0.033933741333464384,
+      "hedged_var_99": 0.024631495415177018,
+      "unhedged_es_975": 0.04149302170707898,
+      "hedged_es_975": 0.029672557558364072,
+      "unhedged_tracking_error": 0.023492902380292162,
+      "hedged_tracking_error": 0.06512239739986699,
+      "hedged_beta": 0.7004141484394556,
+      "var_reduction": 0.27412968781941494,
+      "volatility_reduction": 0.286632290749542
+    },
+    "disclaimer": "Index-equivalent only; replace the index level with the selected VN30 futures settlement price before execution."
+  },
+  "limits": {
+    "breaches": {
+      "single_name": false,
+      "sector": false,
+      "top_five": false,
+      "one_day_var_99": false,
+      "ten_day_es_975": true,
+      "liquidity_days_to_exit": false,
+      "backtest_green_zone": false
+    },
+    "breach_count": 1
+  },
+  "coverage_audit": [
+    {
+      "ticker": "ACB",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1926,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 5,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "BID",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "BSR",
+      "sector": "Energy",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1923,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 8,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "CTG",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "FPT",
+      "sector": "Information Technology",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "GAS",
+      "sector": "Utilities",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "GVR",
+      "sector": "Materials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1925,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 6,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "HDB",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "HPG",
+      "sector": "Materials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "LPB",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1921,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 10,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "MBB",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "MCH",
+      "sector": "Consumer Staples",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1926,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 5,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "MSN",
+      "sector": "Consumer Staples",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "MWG",
+      "sector": "Consumer Discretionary",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "SAB",
+      "sector": "Consumer Staples",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "SHB",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1928,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 3,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "SSB",
+      "sector": "Financials",
+      "first_date": "2021-03-24",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1377,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "SSI",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "STB",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "TCB",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "TCX",
+      "sector": "Financials",
+      "first_date": "2025-10-21",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 234,
+      "usable_returns_last_500": 233,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "sector_proxy",
+      "recent_250d_method": "sector_proxy"
+    },
+    {
+      "ticker": "VCB",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "VHM",
+      "sector": "Real Estate",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "VIB",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1924,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 7,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "VIC",
+      "sector": "Real Estate",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "VJC",
+      "sector": "Industrials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "VNM",
+      "sector": "Consumer Staples",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "VPB",
+      "sector": "Financials",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "VPL",
+      "sector": "Consumer Discretionary",
+      "first_date": "2025-05-13",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 347,
+      "usable_returns_last_500": 346,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "sector_proxy",
+      "recent_250d_method": "own"
+    },
+    {
+      "ticker": "VRE",
+      "sector": "Real Estate",
+      "first_date": "2019-01-02",
+      "last_date": "2026-09-30",
+      "raw_price_rows": 1931,
+      "usable_returns_last_500": 500,
+      "missing_quote_days_after_listing": 0,
+      "primary_500d_method": "own",
+      "recent_250d_method": "own"
+    }
+  ],
+  "component_risk": [
+    {
+      "ticker": "VIC",
+      "sector": "Real Estate",
+      "analytical_weight": 0.10617876424715053,
+      "component_annualised_volatility": 0.02740472570015162,
+      "share_of_total_volatility": 0.13574533662468422,
+      "marginal_annualised_volatility": 0.2580998742494507,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0038926745624481827
+    },
+    {
+      "ticker": "HPG",
+      "sector": "Materials",
+      "analytical_weight": 0.08718256348730252,
+      "component_annualised_volatility": 0.0168665972495131,
+      "share_of_total_volatility": 0.08354624477542068,
+      "marginal_annualised_volatility": 0.19346296524040146,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.00239579752728103
+    },
+    {
+      "ticker": "MWG",
+      "sector": "Consumer Discretionary",
+      "analytical_weight": 0.06838632273545289,
+      "component_annualised_volatility": 0.016765735363146524,
+      "share_of_total_volatility": 0.08304664004055715,
+      "marginal_annualised_volatility": 0.24516211272250227,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.002381470709940269
+    },
+    {
+      "ticker": "FPT",
+      "sector": "Information Technology",
+      "analytical_weight": 0.08618276344731052,
+      "component_annualised_volatility": 0.01588613622427323,
+      "share_of_total_volatility": 0.07868967319813856,
+      "marginal_annualised_volatility": 0.18433078250020984,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.002256529003516824
+    },
+    {
+      "ticker": "VHM",
+      "sector": "Real Estate",
+      "analytical_weight": 0.043691261747650464,
+      "component_annualised_volatility": 0.011878216260260126,
+      "share_of_total_volatility": 0.05883702257749245,
+      "marginal_annualised_volatility": 0.271867091613551,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.001687228355776506
+    },
+    {
+      "ticker": "VPB",
+      "sector": "Financials",
+      "analytical_weight": 0.04719056188762247,
+      "component_annualised_volatility": 0.011378334752565734,
+      "share_of_total_volatility": 0.05636093198359702,
+      "marginal_annualised_volatility": 0.24111462753212393,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0016162232287582328
+    },
+    {
+      "ticker": "TCB",
+      "sector": "Financials",
+      "analytical_weight": 0.04649070185962807,
+      "component_annualised_volatility": 0.010676862945480594,
+      "share_of_total_volatility": 0.05288629306083009,
+      "marginal_annualised_volatility": 0.22965587780795033,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0015165834261347102
+    },
+    {
+      "ticker": "MSN",
+      "sector": "Consumer Staples",
+      "analytical_weight": 0.05158968206358727,
+      "component_annualised_volatility": 0.010245039398130177,
+      "share_of_total_volatility": 0.05074731770895407,
+      "marginal_annualised_volatility": 0.1985869846125931,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.001455245518336282
+    },
+    {
+      "ticker": "STB",
+      "sector": "Financials",
+      "analytical_weight": 0.04859028194361127,
+      "component_annualised_volatility": 0.009243263471544366,
+      "share_of_total_volatility": 0.045785165857306694,
+      "marginal_annualised_volatility": 0.19022864453166,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0013129493425102286
+    },
+    {
+      "ticker": "HDB",
+      "sector": "Financials",
+      "analytical_weight": 0.040391921615676854,
+      "component_annualised_volatility": 0.009142097496684678,
+      "share_of_total_volatility": 0.04528405486416813,
+      "marginal_annualised_volatility": 0.22633479990554495,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0012985793312490174
+    },
+    {
+      "ticker": "MBB",
+      "sector": "Financials",
+      "analytical_weight": 0.03629274145170965,
+      "component_annualised_volatility": 0.007172153277622566,
+      "share_of_total_volatility": 0.03552622170523389,
+      "marginal_annualised_volatility": 0.1976194960958152,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0010187607395620185
+    },
+    {
+      "ticker": "ACB",
+      "sector": "Financials",
+      "analytical_weight": 0.03819236152769445,
+      "component_annualised_volatility": 0.006598162015142403,
+      "share_of_total_volatility": 0.03268303918271858,
+      "marginal_annualised_volatility": 0.17276129967396422,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0009372287727409937
+    },
+    {
+      "ticker": "LPB",
+      "sector": "Financials",
+      "analytical_weight": 0.04339132173565286,
+      "component_annualised_volatility": 0.006062377275148318,
+      "share_of_total_volatility": 0.030029107131559114,
+      "marginal_annualised_volatility": 0.13971404955307257,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.000861123810000522
+    },
+    {
+      "ticker": "VNM",
+      "sector": "Consumer Staples",
+      "analytical_weight": 0.04239152169566086,
+      "component_annualised_volatility": 0.005382644481896414,
+      "share_of_total_volatility": 0.026662149262891004,
+      "marginal_annualised_volatility": 0.1269745521413395,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0007645719020374767
+    },
+    {
+      "ticker": "VRE",
+      "sector": "Real Estate",
+      "analytical_weight": 0.018896220755848826,
+      "component_annualised_volatility": 0.004934047899968004,
+      "share_of_total_volatility": 0.024440091115371657,
+      "marginal_annualised_volatility": 0.2611129475951322,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0007008514867200463
+    },
+    {
+      "ticker": "MCH",
+      "sector": "Consumer Staples",
+      "analytical_weight": 0.030993801239752043,
+      "component_annualised_volatility": 0.0048411445111996845,
+      "share_of_total_volatility": 0.023979907644830312,
+      "marginal_annualised_volatility": 0.15619718516457826,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0006876551255456789
+    },
+    {
+      "ticker": "VJC",
+      "sector": "Industrials",
+      "analytical_weight": 0.03029394121175764,
+      "component_annualised_volatility": 0.0047493731395230315,
+      "share_of_total_volatility": 0.023525331456874257,
+      "marginal_annualised_volatility": 0.15677633710069103,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0006746195605122836
+    },
+    {
+      "ticker": "SSI",
+      "sector": "Financials",
+      "analytical_weight": 0.015496900619876021,
+      "component_annualised_volatility": 0.0038477033603730023,
+      "share_of_total_volatility": 0.019059040896835983,
+      "marginal_annualised_volatility": 0.24828857426097276,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0005465428539095909
+    },
+    {
+      "ticker": "VCB",
+      "sector": "Financials",
+      "analytical_weight": 0.01949610077984403,
+      "component_annualised_volatility": 0.002904707970957993,
+      "share_of_total_volatility": 0.014388049916219914,
+      "marginal_annualised_volatility": 0.14898917500267614,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.000412596095783075
+    },
+    {
+      "ticker": "SHB",
+      "sector": "Financials",
+      "analytical_weight": 0.015896820635872822,
+      "component_annualised_volatility": 0.0028599960517328585,
+      "share_of_total_volatility": 0.01416657590503074,
+      "marginal_annualised_volatility": 0.17990994031089344,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.00040624503967288895
+    },
+    {
+      "ticker": "CTG",
+      "sector": "Financials",
+      "analytical_weight": 0.012797440511897618,
+      "component_annualised_volatility": 0.002510167702586695,
+      "share_of_total_volatility": 0.012433751882805962,
+      "marginal_annualised_volatility": 0.1961460731349385,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0003565540509418112
+    },
+    {
+      "ticker": "VIB",
+      "sector": "Financials",
+      "analytical_weight": 0.009998000399920014,
+      "component_annualised_volatility": 0.001814300258309013,
+      "share_of_total_volatility": 0.008986873358891015,
+      "marginal_annualised_volatility": 0.18146631183606754,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.0002577103139595952
+    },
+    {
+      "ticker": "BSR",
+      "sector": "Energy",
+      "analytical_weight": 0.010697860427914416,
+      "component_annualised_volatility": 0.001547617773377611,
+      "share_of_total_volatility": 0.007665900323619213,
+      "marginal_annualised_volatility": 0.14466610251703615,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.00021982968940230597
+    },
+    {
+      "ticker": "VPL",
+      "sector": "Consumer Discretionary",
+      "analytical_weight": 0.005498900219956008,
+      "component_annualised_volatility": 0.0013481219955746475,
+      "share_of_total_volatility": 0.0066777269038459704,
+      "marginal_annualised_volatility": 0.24516211272250227,
+      "model_method_500d": "sector_proxy_excluding_self",
+      "component_parametric_var_99": 0.00019149252784607428
+    },
+    {
+      "ticker": "SSB",
+      "sector": "Financials",
+      "analytical_weight": 0.012597480503899217,
+      "component_annualised_volatility": 0.0012897214087376305,
+      "share_of_total_volatility": 0.006388448061721815,
+      "marginal_annualised_volatility": 0.1023793137316967,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.00018319707977993132
+    },
+    {
+      "ticker": "BID",
+      "sector": "Financials",
+      "analytical_weight": 0.006198760247950409,
+      "component_annualised_volatility": 0.001085650043186466,
+      "share_of_total_volatility": 0.005377610131238585,
+      "marginal_annualised_volatility": 0.1751398666443715,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.00015420998382075925
+    },
+    {
+      "ticker": "TCX",
+      "sector": "Financials",
+      "analytical_weight": 0.005298940211957607,
+      "component_annualised_volatility": 0.0010325696758061137,
+      "share_of_total_volatility": 0.005114684225062923,
+      "marginal_annualised_volatility": 0.19486343202665568,
+      "model_method_500d": "sector_proxy_excluding_self",
+      "component_parametric_var_99": 0.00014667024056159728
+    },
+    {
+      "ticker": "GAS",
+      "sector": "Utilities",
+      "analytical_weight": 0.008398320335932812,
+      "component_annualised_volatility": 0.0009946595175820809,
+      "share_of_total_volatility": 0.004926901751123112,
+      "marginal_annualised_volatility": 0.11843552970066634,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.00014128533322146423
+    },
+    {
+      "ticker": "GVR",
+      "sector": "Materials",
+      "analytical_weight": 0.004499100179964007,
+      "component_annualised_volatility": 0.0008789441433466107,
+      "share_of_total_volatility": 0.004353722417014386,
+      "marginal_annualised_volatility": 0.19535998492784,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 0.00012484866829370347
+    },
+    {
+      "ticker": "SAB",
+      "sector": "Consumer Staples",
+      "analytical_weight": 0.0050989802039592075,
+      "component_annualised_volatility": 0.0005422962830663969,
+      "share_of_total_volatility": 0.00268618603596371,
+      "marginal_annualised_volatility": 0.10635387104372748,
+      "model_method_500d": "own",
+      "component_parametric_var_99": 7.702988781935092e-05
+    }
+  ],
+  "sector_risk": [
+    {
+      "sector": "Financials",
+      "weight": 0.3983203359328133,
+      "share_of_total_volatility": 0.3844698481632205,
+      "risk_to_weight_ratio": 0.9652277663977241
+    },
+    {
+      "sector": "Real Estate",
+      "weight": 0.1687662467506498,
+      "share_of_total_volatility": 0.21902245031754833,
+      "risk_to_weight_ratio": 1.2977858697133409
+    },
+    {
+      "sector": "Consumer Staples",
+      "weight": 0.13007398520295937,
+      "share_of_total_volatility": 0.1040755606526391,
+      "risk_to_weight_ratio": 0.8001258705977682
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "weight": 0.0738852229554089,
+      "share_of_total_volatility": 0.08972436694440311,
+      "risk_to_weight_ratio": 1.214374990768498
+    },
+    {
+      "sector": "Materials",
+      "weight": 0.09168166366726653,
+      "share_of_total_volatility": 0.08789996719243506,
+      "risk_to_weight_ratio": 0.9587518777085449
+    },
+    {
+      "sector": "Information Technology",
+      "weight": 0.08618276344731052,
+      "share_of_total_volatility": 0.07868967319813856,
+      "risk_to_weight_ratio": 0.9130558136053156
+    },
+    {
+      "sector": "Industrials",
+      "weight": 0.03029394121175764,
+      "share_of_total_volatility": 0.023525331456874257,
+      "risk_to_weight_ratio": 0.7765688621506811
+    },
+    {
+      "sector": "Energy",
+      "weight": 0.010697860427914416,
+      "share_of_total_volatility": 0.007665900323619213,
+      "risk_to_weight_ratio": 0.7165825704377512
+    },
+    {
+      "sector": "Utilities",
+      "weight": 0.008398320335932812,
+      "share_of_total_volatility": 0.004926901751123112,
+      "risk_to_weight_ratio": 0.5866532299373021
+    }
+  ],
+  "liquidity": [
+    {
+      "ticker": "MCH",
+      "position_vnd": 3099380123.9752045,
+      "median_60d_traded_value_vnd": 38508000000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.40243327671850065
+    },
+    {
+      "ticker": "SSB",
+      "position_vnd": 1259748050.3899217,
+      "median_60d_traded_value_vnd": 35716765000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.1763524846651036
+    },
+    {
+      "ticker": "LPB",
+      "position_vnd": 4339132173.565287,
+      "median_60d_traded_value_vnd": 129194590000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.16793010348054382
+    },
+    {
+      "ticker": "MWG",
+      "position_vnd": 6838632273.545289,
+      "median_60d_traded_value_vnd": 213043000000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.16049887284598155
+    },
+    {
+      "ticker": "STB",
+      "position_vnd": 4859028194.361127,
+      "median_60d_traded_value_vnd": 199467160000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.12180020496509618
+    },
+    {
+      "ticker": "FPT",
+      "position_vnd": 8618276344.731052,
+      "median_60d_traded_value_vnd": 382727185000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.11259033434914027
+    },
+    {
+      "ticker": "VJC",
+      "position_vnd": 3029394121.175764,
+      "median_60d_traded_value_vnd": 138507585000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.10935841965534826
+    },
+    {
+      "ticker": "VNM",
+      "position_vnd": 4239152169.566086,
+      "median_60d_traded_value_vnd": 198151685000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.10696735103630549
+    },
+    {
+      "ticker": "HPG",
+      "position_vnd": 8718256348.730251,
+      "median_60d_traded_value_vnd": 408474330000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.10671731010281908
+    },
+    {
+      "ticker": "SAB",
+      "position_vnd": 509898020.39592075,
+      "median_60d_traded_value_vnd": 24868185000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.10252015183173215
+    },
+    {
+      "ticker": "MSN",
+      "position_vnd": 5158968206.358727,
+      "median_60d_traded_value_vnd": 259380400000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.09944791908638292
+    },
+    {
+      "ticker": "ACB",
+      "position_vnd": 3819236152.769445,
+      "median_60d_traded_value_vnd": 211442840000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.09031367893018853
+    },
+    {
+      "ticker": "HDB",
+      "position_vnd": 4039192161.5676856,
+      "median_60d_traded_value_vnd": 261583745000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.07720648241288246
+    },
+    {
+      "ticker": "VRE",
+      "position_vnd": 1889622075.5848827,
+      "median_60d_traded_value_vnd": 129840975000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.07276678550761355
+    },
+    {
+      "ticker": "VIB",
+      "position_vnd": 999800039.9920014,
+      "median_60d_traded_value_vnd": 69768502500.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.07165124692134545
+    },
+    {
+      "ticker": "MBB",
+      "position_vnd": 3629274145.170965,
+      "median_60d_traded_value_vnd": 254259857500.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.07136938919213713
+    },
+    {
+      "ticker": "VPB",
+      "position_vnd": 4719056188.762247,
+      "median_60d_traded_value_vnd": 395178157500.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.059707958286665266
+    },
+    {
+      "ticker": "TCB",
+      "position_vnd": 4649070185.962808,
+      "median_60d_traded_value_vnd": 402255815000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.05778748264910487
+    },
+    {
+      "ticker": "VIC",
+      "position_vnd": 10617876424.715054,
+      "median_60d_traded_value_vnd": 955254200000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.05557618288783788
+    },
+    {
+      "ticker": "VPL",
+      "position_vnd": 549890021.9956008,
+      "median_60d_traded_value_vnd": 52751015000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.052121274064167375
+    },
+    {
+      "ticker": "VCB",
+      "position_vnd": 1949610077.984403,
+      "median_60d_traded_value_vnd": 241981170000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.040284334479091966
+    },
+    {
+      "ticker": "GAS",
+      "position_vnd": 839832033.5932811,
+      "median_60d_traded_value_vnd": 104812165000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.0400636716927506
+    },
+    {
+      "ticker": "GVR",
+      "position_vnd": 449910017.9964007,
+      "median_60d_traded_value_vnd": 56818257500.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.039592028847100835
+    },
+    {
+      "ticker": "VHM",
+      "position_vnd": 4369126174.765046,
+      "median_60d_traded_value_vnd": 585174965000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.03733179336170889
+    },
+    {
+      "ticker": "TCX",
+      "position_vnd": 529894021.1957607,
+      "median_60d_traded_value_vnd": 71344080000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.037136509518082
+    },
+    {
+      "ticker": "CTG",
+      "position_vnd": 1279744051.1897619,
+      "median_60d_traded_value_vnd": 231604212500.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.02762782328904665
+    },
+    {
+      "ticker": "BID",
+      "position_vnd": 619876024.7950408,
+      "median_60d_traded_value_vnd": 119051310000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.026033985883693378
+    },
+    {
+      "ticker": "BSR",
+      "position_vnd": 1069786042.7914416,
+      "median_60d_traded_value_vnd": 249340905000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.02145227721042084
+    },
+    {
+      "ticker": "SSI",
+      "position_vnd": 1549690061.9876022,
+      "median_60d_traded_value_vnd": 435766950000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.01778117938943743
+    },
+    {
+      "ticker": "SHB",
+      "position_vnd": 1589682063.5872822,
+      "median_60d_traded_value_vnd": 550353700000.0,
+      "participation_rate": 0.2,
+      "days_to_exit": 0.014442367368360404
+    }
+  ],
+  "backtest_series": [
+    {
+      "date": "2025-09-29",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-09-30",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-01",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-02",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.005691745964839233,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-03",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.0013090607821887607,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-06",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-07",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.004307379549305576,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-08",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-09",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-10",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-13",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-14",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.001797519149374603,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-15",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.002285122661334539,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-16",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-17",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.020907195412275585,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-20",
+      "var_99": 0.03847411737749756,
+      "realised_loss": 0.05468057489194207,
+      "exception": 1
+    },
+    {
+      "date": "2025-10-21",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-22",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-23",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-24",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0006617542267731596,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-27",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.020296510811683058,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-28",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-29",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-30",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.010225980938569948,
+      "exception": 0
+    },
+    {
+      "date": "2025-10-31",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.017905588642888548,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-03",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.013259386517648923,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-04",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-05",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0036906902228583554,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-06",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.010479428926861196,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-07",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.022883094995936454,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-10",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.009023518965235457,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-11",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-12",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-13",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.005053616076319311,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-14",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-17",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-18",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-19",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.005020973045764962,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-20",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-21",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-24",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-25",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.003526873853918964,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-26",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-27",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0009439019172958021,
+      "exception": 0
+    },
+    {
+      "date": "2025-11-28",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-01",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-02",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-03",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-04",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-05",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0036921548493275024,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-08",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-09",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.008153835394053677,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-10",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.010053864769568238,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-11",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.011411438030316266,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-12",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.031331666651190346,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-15",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-16",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-17",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.004878096042725681,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-18",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-19",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-22",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-23",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-24",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-25",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.019650349342548876,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-26",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0036739386143146437,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-29",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-30",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2025-12-31",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-05",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.002175792131707534,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-06",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-07",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-08",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.00835426566329049,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-09",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.004229243211146866,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-12",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-13",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-14",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.009020859972956376,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-15",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0075991584616605335,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-16",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-19",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-20",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.003496622697691092,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-21",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.001867974741948809,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-22",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-23",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0034847995669949243,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-26",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.019761947584685174,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-27",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.004604146493149081,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-28",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.009602025757850388,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-29",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-01-30",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-02",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.014605630508295844,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-03",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.003061173414408227,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-04",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.006671251015530195,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-05",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0058392916932769896,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-06",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.011903366958121912,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-09",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-10",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-11",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-12",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-13",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-23",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-24",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-25",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0011608790132995182,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-26",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-02-27",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.004489387075873158,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-02",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.024288218465302047,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-03",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.023478699877513564,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-04",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-05",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.008226131023063297,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-06",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.02094086413358437,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-09",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.06710055502044654,
+      "exception": 1
+    },
+    {
+      "date": "2026-03-10",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-11",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-12",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.016172505716441743,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-13",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0030655305870544458,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-16",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-17",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-18",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.002345616880940462,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-19",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0069583726785748,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-20",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.03113894913178332,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-23",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.033102564605426724,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-24",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-25",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-26",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.012295143252673389,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-27",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-30",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.004344608507271477,
+      "exception": 0
+    },
+    {
+      "date": "2026-03-31",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-01",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-02",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.006032761534341893,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-03",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.008237890159840264,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-06",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0006448316656325753,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-07",
+      "var_99": 0.06101476475747935,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-08",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-09",
+      "var_99": 0.05007999802552637,
+      "realised_loss": 0.008007323015207181,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-10",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-13",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0008198430733022626,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-14",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-15",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-16",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-17",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-20",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-21",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0012669899630856605,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-22",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-23",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0012375788049165037,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-24",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.006274230298209941,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-28",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-04-29",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.007366779374865783,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-04",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0036041565938641136,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-05",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-06",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-07",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-08",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0023971378948865617,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-11",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.013657096190104589,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-12",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-13",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0037941207923249485,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-14",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-15",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.00800960212741442,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-18",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0025218987865425818,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-19",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.008170757418921534,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-20",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-21",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0009788316508020371,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-22",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.007555371277593473,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-25",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-26",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-27",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.002651025039677056,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-28",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0102964241131448,
+      "exception": 0
+    },
+    {
+      "date": "2026-05-29",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0002652351337998367,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-01",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0042290486419726304,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-02",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.008148916449583262,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-03",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-04",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-05",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-08",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0250265468194503,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-09",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-10",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-11",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.006274014181465514,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-12",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0019474119531918087,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-15",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-16",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0004237104296496961,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-17",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.002274427730814093,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-18",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-19",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0026284333178997438,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-22",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-23",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-24",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-25",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0027481850240100147,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-26",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-29",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.00015089501551039978,
+      "exception": 0
+    },
+    {
+      "date": "2026-06-30",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.002714720970982173,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-01",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-02",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0020932328602059607,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-03",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0027712463529195376,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-06",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.005795057069383183,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-07",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-08",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-09",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.00475283348214152,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-10",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.007710334876494993,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-13",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.015243153650014987,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-14",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-15",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.015521745380214901,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-16",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-17",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.004830696203673855,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-20",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0239335480325993,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-21",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0029683126048119833,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-22",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.02926227555017927,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-23",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-24",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.009143244918158685,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-27",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.012456522598848946,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-28",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-29",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-30",
+      "var_99": 0.039318994337525046,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-07-31",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.007493066797908901,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-03",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-04",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-05",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.005258123254758913,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-06",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.007379611844705553,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-07",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-10",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-11",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0015996887555549228,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-12",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-13",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.014320290212469384,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-14",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0171832362922998,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-17",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-18",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0004774199284992836,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-19",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0004224414026505541,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-20",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-21",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-24",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-25",
+      "var_99": 0.03225768764539924,
+      "realised_loss": 0.00270021150423955,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-26",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-27",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-08-28",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-03",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.01085426905923407,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-04",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-07",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.01094565448433384,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-08",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-09",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0003761344517067834,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-10",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-11",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0203838381068801,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-14",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0040789510183653335,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-15",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-16",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-17",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-18",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.005702285733299868,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-21",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.005000851271709333,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-22",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-23",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.005219108008403104,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-24",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.011703120839852393,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-25",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-28",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.00829787356962482,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-29",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.004174021202421771,
+      "exception": 0
+    },
+    {
+      "date": "2026-09-30",
+      "var_99": 0.0322348246078509,
+      "realised_loss": 0.0038641003655899768,
+      "exception": 0
+    }
+  ],
+  "rolling_risk": [
+    {
+      "date": "2020-01-03",
+      "annualised_volatility_60d": 0.10748595338656523,
+      "historical_var_99_250d": 0.019195716209542513,
+      "drawdown": -0.05973054157288871
+    },
+    {
+      "date": "2020-01-10",
+      "annualised_volatility_60d": 0.11811200097877782,
+      "historical_var_99_250d": 0.019195716209542513,
+      "drawdown": -0.05688080639533988
+    },
+    {
+      "date": "2020-01-17",
+      "annualised_volatility_60d": 0.11812609220653954,
+      "historical_var_99_250d": 0.019195716209542513,
+      "drawdown": -0.04620748511330752
+    },
+    {
+      "date": "2020-01-31",
+      "annualised_volatility_60d": 0.15355270881519156,
+      "historical_var_99_250d": 0.023805106447354927,
+      "drawdown": -0.08920171159294088
+    },
+    {
+      "date": "2020-02-07",
+      "annualised_volatility_60d": 0.16143110453538834,
+      "historical_var_99_250d": 0.023805106447354927,
+      "drawdown": -0.06189475047139148
+    },
+    {
+      "date": "2020-02-14",
+      "annualised_volatility_60d": 0.16449719768969753,
+      "historical_var_99_250d": 0.023805106447354927,
+      "drawdown": -0.05743002259730867
+    },
+    {
+      "date": "2020-02-21",
+      "annualised_volatility_60d": 0.16019866605554692,
+      "historical_var_99_250d": 0.023805106447354927,
+      "drawdown": -0.05866184638301353
+    },
+    {
+      "date": "2020-02-28",
+      "annualised_volatility_60d": 0.18364838960370192,
+      "historical_var_99_250d": 0.02567275252589507,
+      "drawdown": -0.0858733291678262
+    },
+    {
+      "date": "2020-03-06",
+      "annualised_volatility_60d": 0.17859218540873578,
+      "historical_var_99_250d": 0.02567275252589507,
+      "drawdown": -0.0674378181124985
+    },
+    {
+      "date": "2020-03-13",
+      "annualised_volatility_60d": 0.27218880121855216,
+      "historical_var_99_250d": 0.038010617225260716,
+      "drawdown": -0.20420654905221802
+    },
+    {
+      "date": "2020-03-20",
+      "annualised_volatility_60d": 0.27802856526279246,
+      "historical_var_99_250d": 0.038010617225260716,
+      "drawdown": -0.24682631566968694
+    },
+    {
+      "date": "2020-03-27",
+      "annualised_volatility_60d": 0.3263688506787355,
+      "historical_var_99_250d": 0.0483746097625794,
+      "drawdown": -0.29772460801012024
+    },
+    {
+      "date": "2020-04-06",
+      "annualised_volatility_60d": 0.38443592028802154,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.23510898041321082
+    },
+    {
+      "date": "2020-04-13",
+      "annualised_volatility_60d": 0.3846514787439545,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.21424846385600738
+    },
+    {
+      "date": "2020-04-20",
+      "annualised_volatility_60d": 0.389096049461399,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.17438998200277034
+    },
+    {
+      "date": "2020-04-27",
+      "annualised_volatility_60d": 0.3912022260941288,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.1972128556314917
+    },
+    {
+      "date": "2020-05-06",
+      "annualised_volatility_60d": 0.38976155985838656,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.18349624848442303
+    },
+    {
+      "date": "2020-05-13",
+      "annualised_volatility_60d": 0.3967151536498787,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.124203900659135
+    },
+    {
+      "date": "2020-05-20",
+      "annualised_volatility_60d": 0.3994310868735678,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.10704125434231082
+    },
+    {
+      "date": "2020-05-27",
+      "annualised_volatility_60d": 0.3919618547420826,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.10965048065207594
+    },
+    {
+      "date": "2020-06-03",
+      "annualised_volatility_60d": 0.3941030090570298,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.07233654028321457
+    },
+    {
+      "date": "2020-06-10",
+      "annualised_volatility_60d": 0.3317978692701391,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.05633349155458223
+    },
+    {
+      "date": "2020-06-17",
+      "annualised_volatility_60d": 0.3491383015504294,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.10465692759644663
+    },
+    {
+      "date": "2020-06-24",
+      "annualised_volatility_60d": 0.29871395778519777,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.09869078630187367
+    },
+    {
+      "date": "2020-07-01",
+      "annualised_volatility_60d": 0.24116401888879854,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.11969573606813533
+    },
+    {
+      "date": "2020-07-08",
+      "annualised_volatility_60d": 0.23979566381808146,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.10042860698069545
+    },
+    {
+      "date": "2020-07-15",
+      "annualised_volatility_60d": 0.23792861990800984,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.0933252576314697
+    },
+    {
+      "date": "2020-07-22",
+      "annualised_volatility_60d": 0.21572636645249782,
+      "historical_var_99_250d": 0.054872172517663985,
+      "drawdown": -0.10209550274684864
+    },
+    {
+      "date": "2020-07-29",
+      "annualised_volatility_60d": 0.2775526902590246,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.17761812461079696
+    },
+    {
+      "date": "2020-08-05",
+      "annualised_volatility_60d": 0.27686599175625587,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.12028489790749464
+    },
+    {
+      "date": "2020-08-12",
+      "annualised_volatility_60d": 0.2729269882934775,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.10860094603872827
+    },
+    {
+      "date": "2020-08-19",
+      "annualised_volatility_60d": 0.2683952724642895,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.10450555442002474
+    },
+    {
+      "date": "2020-08-26",
+      "annualised_volatility_60d": 0.2683465966328016,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.07508297147323784
+    },
+    {
+      "date": "2020-09-03",
+      "annualised_volatility_60d": 0.2685495097881276,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.040243819118515045
+    },
+    {
+      "date": "2020-09-10",
+      "annualised_volatility_60d": 0.23967598362461512,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.05895052986674332
+    },
+    {
+      "date": "2020-09-17",
+      "annualised_volatility_60d": 0.23659541993584182,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.043701010378177974
+    },
+    {
+      "date": "2020-09-24",
+      "annualised_volatility_60d": 0.22693234546259852,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.015833139358447545
+    },
+    {
+      "date": "2020-10-01",
+      "annualised_volatility_60d": 0.22789281878367137,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2020-10-08",
+      "annualised_volatility_60d": 0.226018431513975,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.0008207283744542382
+    },
+    {
+      "date": "2020-10-15",
+      "annualised_volatility_60d": 0.22520924826683703,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2020-10-22",
+      "annualised_volatility_60d": 0.1278259718618933,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2020-10-29",
+      "annualised_volatility_60d": 0.14225765228065487,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.05001292234774579
+    },
+    {
+      "date": "2020-11-05",
+      "annualised_volatility_60d": 0.14323967637859006,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.029267994534236674
+    },
+    {
+      "date": "2020-11-12",
+      "annualised_volatility_60d": 0.1449043436827346,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.0034323455054744434
+    },
+    {
+      "date": "2020-11-19",
+      "annualised_volatility_60d": 0.15095460353075485,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2020-11-26",
+      "annualised_volatility_60d": 0.14930845759534597,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2020-12-03",
+      "annualised_volatility_60d": 0.14139086288922417,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2020-12-10",
+      "annualised_volatility_60d": 0.14559543230683702,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.012983789319050865
+    },
+    {
+      "date": "2020-12-17",
+      "annualised_volatility_60d": 0.15045658974855558,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.009052519581377871
+    },
+    {
+      "date": "2020-12-24",
+      "annualised_volatility_60d": 0.15494464374838737,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": -0.02059920962315731
+    },
+    {
+      "date": "2020-12-31",
+      "annualised_volatility_60d": 0.1563581867663339,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2021-01-08",
+      "annualised_volatility_60d": 0.1609920238097108,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2021-01-15",
+      "annualised_volatility_60d": 0.16204819646316027,
+      "historical_var_99_250d": 0.05896461690858034,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2021-01-22",
+      "annualised_volatility_60d": 0.20082685147524323,
+      "historical_var_99_250d": 0.06091192335538221,
+      "drawdown": -0.029206807226844433
+    },
+    {
+      "date": "2021-01-29",
+      "annualised_volatility_60d": 0.28467694147385364,
+      "historical_var_99_250d": 0.06667215720950344,
+      "drawdown": -0.11540334055008572
+    },
+    {
+      "date": "2021-02-05",
+      "annualised_volatility_60d": 0.3107602183882496,
+      "historical_var_99_250d": 0.06667215720950344,
+      "drawdown": -0.04123223590984881
+    },
+    {
+      "date": "2021-02-19",
+      "annualised_volatility_60d": 0.32953256596740454,
+      "historical_var_99_250d": 0.06667215720950344,
+      "drawdown": -0.0025431520110678063
+    },
+    {
+      "date": "2021-02-26",
+      "annualised_volatility_60d": 0.3310450810182949,
+      "historical_var_99_250d": 0.06667215720950344,
+      "drawdown": -0.0026679040763855078
+    },
+    {
+      "date": "2021-03-05",
+      "annualised_volatility_60d": 0.33434332997228633,
+      "historical_var_99_250d": 0.06667215720950344,
+      "drawdown": -0.01703797957618114
+    },
+    {
+      "date": "2021-03-12",
+      "annualised_volatility_60d": 0.3339711759068263,
+      "historical_var_99_250d": 0.06091192335538221,
+      "drawdown": -0.0035692418651739333
+    },
+    {
+      "date": "2021-03-19",
+      "annualised_volatility_60d": 0.3306525680309188,
+      "historical_var_99_250d": 0.06091192335538221,
+      "drawdown": -0.0039955948629604165
+    },
+    {
+      "date": "2021-03-26",
+      "annualised_volatility_60d": 0.32990386908321206,
+      "historical_var_99_250d": 0.056095532696804014,
+      "drawdown": -0.028098356920307377
+    },
+    {
+      "date": "2021-04-02",
+      "annualised_volatility_60d": 0.33313841806367256,
+      "historical_var_99_250d": 0.05392670324616862,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2021-04-09",
+      "annualised_volatility_60d": 0.32865789497929254,
+      "historical_var_99_250d": 0.05392670324616862,
+      "drawdown": -0.002079825654530576
+    },
+    {
+      "date": "2021-04-16",
+      "annualised_volatility_60d": 0.32980238244547555,
+      "historical_var_99_250d": 0.05392670324616862,
+      "drawdown": -0.009786392699201008
+    },
+    {
+      "date": "2021-04-26",
+      "annualised_volatility_60d": 0.316251506607839,
+      "historical_var_99_250d": 0.053447088366716446,
+      "drawdown": -0.03245441656043846
+    },
+    {
+      "date": "2021-05-05",
+      "annualised_volatility_60d": 0.24425648148089682,
+      "historical_var_99_250d": 0.053447088366716446,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2021-05-12",
+      "annualised_volatility_60d": 0.2142949256953415,
+      "historical_var_99_250d": 0.053447088366716446,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2021-05-19",
+      "annualised_volatility_60d": 0.1781479189926437,
+      "historical_var_99_250d": 0.053447088366716446,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2021-05-26",
+      "annualised_volatility_60d": 0.17937917309392384,
+      "historical_var_99_250d": 0.053447088366716446,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2021-06-02",
+      "annualised_volatility_60d": 0.17767354636020388,
+      "historical_var_99_250d": 0.053447088366716446,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2021-06-09",
+      "annualised_volatility_60d": 0.19710870864317892,
+      "historical_var_99_250d": 0.053447088366716446,
+      "drawdown": -0.03528921548091901
+    },
+    {
+      "date": "2021-06-16",
+      "annualised_volatility_60d": 0.20514134770528306,
+      "historical_var_99_250d": 0.049670144335924635,
+      "drawdown": -0.03297954758652921
+    },
+    {
+      "date": "2021-06-23",
+      "annualised_volatility_60d": 0.1998005790814334,
+      "historical_var_99_250d": 0.049670144335924635,
+      "drawdown": -0.020269611696558276
+    },
+    {
+      "date": "2021-06-30",
+      "annualised_volatility_60d": 0.1937560294879945,
+      "historical_var_99_250d": 0.049670144335924635,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2021-07-07",
+      "annualised_volatility_60d": 0.22913824562201493,
+      "historical_var_99_250d": 0.05390691554490463,
+      "drawdown": -0.012989359140767709
+    },
+    {
+      "date": "2021-07-14",
+      "annualised_volatility_60d": 0.24659408566061053,
+      "historical_var_99_250d": 0.05390691554490463,
+      "drawdown": -0.08860252403491642
+    },
+    {
+      "date": "2021-07-21",
+      "annualised_volatility_60d": 0.24877465441362487,
+      "historical_var_99_250d": 0.05390691554490463,
+      "drawdown": -0.08599366125890107
+    },
+    {
+      "date": "2021-07-28",
+      "annualised_volatility_60d": 0.25107809292817335,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.08118347388386837
+    },
+    {
+      "date": "2021-08-04",
+      "annualised_volatility_60d": 0.2509841887287606,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.032832525075469965
+    },
+    {
+      "date": "2021-08-11",
+      "annualised_volatility_60d": 0.2507819449776919,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.021661531395213873
+    },
+    {
+      "date": "2021-08-18",
+      "annualised_volatility_60d": 0.24818713965746372,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.021220689556353145
+    },
+    {
+      "date": "2021-08-25",
+      "annualised_volatility_60d": 0.2631257294692442,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.0639785806733959
+    },
+    {
+      "date": "2021-09-01",
+      "annualised_volatility_60d": 0.2496509721157079,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.06496064514774313
+    },
+    {
+      "date": "2021-09-10",
+      "annualised_volatility_60d": 0.24420023296602464,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.05311012549433647
+    },
+    {
+      "date": "2021-09-17",
+      "annualised_volatility_60d": 0.24315455104103542,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.049788541786740415
+    },
+    {
+      "date": "2021-09-24",
+      "annualised_volatility_60d": 0.2416831201061533,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.04761342962424309
+    },
+    {
+      "date": "2021-10-01",
+      "annualised_volatility_60d": 0.2114411338842854,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.06352439382644914
+    },
+    {
+      "date": "2021-10-08",
+      "annualised_volatility_60d": 0.19284453750252045,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.038641080711367515
+    },
+    {
+      "date": "2021-10-15",
+      "annualised_volatility_60d": 0.16098170806459774,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.018837749442394025
+    },
+    {
+      "date": "2021-10-22",
+      "annualised_volatility_60d": 0.1565507484071087,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.03492583783264236
+    },
+    {
+      "date": "2021-10-29",
+      "annualised_volatility_60d": 0.1550457373215658,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.008999359690120667
+    },
+    {
+      "date": "2021-11-05",
+      "annualised_volatility_60d": 0.15212147930570927,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2021-11-12",
+      "annualised_volatility_60d": 0.15158760481229033,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.0053404174935980375
+    },
+    {
+      "date": "2021-11-19",
+      "annualised_volatility_60d": 0.11427115963556582,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.02191732107365152
+    },
+    {
+      "date": "2021-11-26",
+      "annualised_volatility_60d": 0.12147255243850115,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.003848951889529717
+    },
+    {
+      "date": "2021-12-03",
+      "annualised_volatility_60d": 0.1330960501541762,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.043916960735950195
+    },
+    {
+      "date": "2021-12-10",
+      "annualised_volatility_60d": 0.14553035412703272,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.040612595129738915
+    },
+    {
+      "date": "2021-12-17",
+      "annualised_volatility_60d": 0.14456794327032343,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.042955471162349546
+    },
+    {
+      "date": "2021-12-24",
+      "annualised_volatility_60d": 0.148964364404898,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.04996746943432118
+    },
+    {
+      "date": "2021-12-31",
+      "annualised_volatility_60d": 0.14828749695505372,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.03112985661799139
+    },
+    {
+      "date": "2022-01-10",
+      "annualised_volatility_60d": 0.14770515827866795,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.04137914805576304
+    },
+    {
+      "date": "2022-01-17",
+      "annualised_volatility_60d": 0.16441615687665345,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.06159592163139638
+    },
+    {
+      "date": "2022-01-24",
+      "annualised_volatility_60d": 0.16312005764040058,
+      "historical_var_99_250d": 0.04154237088128053,
+      "drawdown": -0.06968332907682528
+    },
+    {
+      "date": "2022-02-07",
+      "annualised_volatility_60d": 0.1746260264966334,
+      "historical_var_99_250d": 0.0366520867045622,
+      "drawdown": -0.026414629489938113
+    },
+    {
+      "date": "2022-02-14",
+      "annualised_volatility_60d": 0.18089824110405162,
+      "historical_var_99_250d": 0.0366520867045622,
+      "drawdown": -0.04945144764168252
+    },
+    {
+      "date": "2022-02-21",
+      "annualised_volatility_60d": 0.18259463175565777,
+      "historical_var_99_250d": 0.036353155566108686,
+      "drawdown": -0.034106739239246564
+    },
+    {
+      "date": "2022-02-28",
+      "annualised_volatility_60d": 0.17648916259185654,
+      "historical_var_99_250d": 0.036353155566108686,
+      "drawdown": -0.0479004356563727
+    },
+    {
+      "date": "2022-03-07",
+      "annualised_volatility_60d": 0.17346124926290163,
+      "historical_var_99_250d": 0.036353155566108686,
+      "drawdown": -0.051326135637025705
+    },
+    {
+      "date": "2022-03-14",
+      "annualised_volatility_60d": 0.16565117254839162,
+      "historical_var_99_250d": 0.036353155566108686,
+      "drawdown": -0.07772621166255556
+    },
+    {
+      "date": "2022-03-21",
+      "annualised_volatility_60d": 0.16860668756904318,
+      "historical_var_99_250d": 0.036353155566108686,
+      "drawdown": -0.053905634940292546
+    },
+    {
+      "date": "2022-03-28",
+      "annualised_volatility_60d": 0.16137690809268077,
+      "historical_var_99_250d": 0.036353155566108686,
+      "drawdown": -0.06270789952451394
+    },
+    {
+      "date": "2022-04-04",
+      "annualised_volatility_60d": 0.1671864428328781,
+      "historical_var_99_250d": 0.036353155566108686,
+      "drawdown": -0.02323579352927152
+    },
+    {
+      "date": "2022-04-12",
+      "annualised_volatility_60d": 0.16768519644268157,
+      "historical_var_99_250d": 0.036353155566108686,
+      "drawdown": -0.04841319768320551
+    },
+    {
+      "date": "2022-04-19",
+      "annualised_volatility_60d": 0.16365021744994998,
+      "historical_var_99_250d": 0.036353155566108686,
+      "drawdown": -0.08689747113389512
+    },
+    {
+      "date": "2022-04-26",
+      "annualised_volatility_60d": 0.202781156212707,
+      "historical_var_99_250d": 0.04154237088128053,
+      "drawdown": -0.12062839310522955
+    },
+    {
+      "date": "2022-05-05",
+      "annualised_volatility_60d": 0.19478846643714448,
+      "historical_var_99_250d": 0.04154237088128053,
+      "drawdown": -0.11400893112547295
+    },
+    {
+      "date": "2022-05-12",
+      "annualised_volatility_60d": 0.24054028388858856,
+      "historical_var_99_250d": 0.04637808319818833,
+      "drawdown": -0.19404726315188192
+    },
+    {
+      "date": "2022-05-19",
+      "annualised_volatility_60d": 0.2782308811709347,
+      "historical_var_99_250d": 0.04658899224436374,
+      "drawdown": -0.18879279170133023
+    },
+    {
+      "date": "2022-05-26",
+      "annualised_volatility_60d": 0.28813770718702536,
+      "historical_var_99_250d": 0.04658899224436374,
+      "drawdown": -0.17242912033794533
+    },
+    {
+      "date": "2022-06-02",
+      "annualised_volatility_60d": 0.2881725865519166,
+      "historical_var_99_250d": 0.04658899224436374,
+      "drawdown": -0.16448239581984758
+    },
+    {
+      "date": "2022-06-09",
+      "annualised_volatility_60d": 0.289293783699687,
+      "historical_var_99_250d": 0.04658899224436374,
+      "drawdown": -0.14946078299207222
+    },
+    {
+      "date": "2022-06-16",
+      "annualised_volatility_60d": 0.30881472262225385,
+      "historical_var_99_250d": 0.049015262609826575,
+      "drawdown": -0.19264889526439977
+    },
+    {
+      "date": "2022-06-23",
+      "annualised_volatility_60d": 0.31608003956900144,
+      "historical_var_99_250d": 0.049015262609826575,
+      "drawdown": -0.2168427610257594
+    },
+    {
+      "date": "2022-06-30",
+      "annualised_volatility_60d": 0.31616227770606464,
+      "historical_var_99_250d": 0.049015262609826575,
+      "drawdown": -0.21268005042158966
+    },
+    {
+      "date": "2022-07-07",
+      "annualised_volatility_60d": 0.3194262917427308,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.22748185923753506
+    },
+    {
+      "date": "2022-07-14",
+      "annualised_volatility_60d": 0.3164517280665819,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.22958902491837063
+    },
+    {
+      "date": "2022-07-21",
+      "annualised_volatility_60d": 0.29254435683916724,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.21759231846640392
+    },
+    {
+      "date": "2022-07-28",
+      "annualised_volatility_60d": 0.2909417814325939,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.21636461479718594
+    },
+    {
+      "date": "2022-08-04",
+      "annualised_volatility_60d": 0.2526524052134777,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.19298870361152964
+    },
+    {
+      "date": "2022-08-11",
+      "annualised_volatility_60d": 0.2074338506043429,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.19670366683483964
+    },
+    {
+      "date": "2022-08-18",
+      "annualised_volatility_60d": 0.1953414766022353,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.17979169688721275
+    },
+    {
+      "date": "2022-08-25",
+      "annualised_volatility_60d": 0.19276890107841146,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.17336562786474108
+    },
+    {
+      "date": "2022-09-05",
+      "annualised_volatility_60d": 0.19078782469969305,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.17996769418795922
+    },
+    {
+      "date": "2022-09-12",
+      "annualised_volatility_60d": 0.15925971264834327,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.19595123022748728
+    },
+    {
+      "date": "2022-09-19",
+      "annualised_volatility_60d": 0.14818495313263175,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.22688498348884767
+    },
+    {
+      "date": "2022-09-26",
+      "annualised_volatility_60d": 0.1495689892975786,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.2523997742438193
+    },
+    {
+      "date": "2022-10-03",
+      "annualised_volatility_60d": 0.17099779482281857,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.30951100917846364
+    },
+    {
+      "date": "2022-10-10",
+      "annualised_volatility_60d": 0.20369860320807656,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.3493827480306393
+    },
+    {
+      "date": "2022-10-17",
+      "annualised_volatility_60d": 0.23222547419911993,
+      "historical_var_99_250d": 0.04818483764245554,
+      "drawdown": -0.3443847692219202
+    },
+    {
+      "date": "2022-10-24",
+      "annualised_volatility_60d": 0.2601903502925348,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.39709237687705945
+    },
+    {
+      "date": "2022-10-31",
+      "annualised_volatility_60d": 0.27394122474297317,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.3596105194423084
+    },
+    {
+      "date": "2022-11-07",
+      "annualised_volatility_60d": 0.2825124075586606,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.39562761780887934
+    },
+    {
+      "date": "2022-11-14",
+      "annualised_volatility_60d": 0.29610719598522633,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.41172313511188374
+    },
+    {
+      "date": "2022-11-21",
+      "annualised_volatility_60d": 0.33324689486140274,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.3809610555656867
+    },
+    {
+      "date": "2022-11-28",
+      "annualised_volatility_60d": 0.35371620233243684,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.3428409268106465
+    },
+    {
+      "date": "2022-12-05",
+      "annualised_volatility_60d": 0.37486828337941136,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.27167803689776104
+    },
+    {
+      "date": "2022-12-12",
+      "annualised_volatility_60d": 0.38994044024056984,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.31187384808273944
+    },
+    {
+      "date": "2022-12-19",
+      "annualised_volatility_60d": 0.38777858212474514,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.3056788112806147
+    },
+    {
+      "date": "2022-12-26",
+      "annualised_volatility_60d": 0.38741519294838433,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.347437016295274
+    },
+    {
+      "date": "2023-01-03",
+      "annualised_volatility_60d": 0.37969212573425265,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.3073596325666522
+    },
+    {
+      "date": "2023-01-10",
+      "annualised_volatility_60d": 0.3615862405922861,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.3027570204727814
+    },
+    {
+      "date": "2023-01-17",
+      "annualised_volatility_60d": 0.33790183418818703,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.27565140545262756
+    },
+    {
+      "date": "2023-01-31",
+      "annualised_volatility_60d": 0.3294451407703941,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.25920518285315497
+    },
+    {
+      "date": "2023-02-07",
+      "annualised_volatility_60d": 0.3294674621733446,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.2987999656989405
+    },
+    {
+      "date": "2023-02-14",
+      "annualised_volatility_60d": 0.3143371500673137,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.3164091497795879
+    },
+    {
+      "date": "2023-02-21",
+      "annualised_volatility_60d": 0.28470881569090234,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.286934586799362
+    },
+    {
+      "date": "2023-02-28",
+      "annualised_volatility_60d": 0.27634300713885573,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.3298000664283416
+    },
+    {
+      "date": "2023-03-07",
+      "annualised_volatility_60d": 0.2523186996277526,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.3219590111141767
+    },
+    {
+      "date": "2023-03-14",
+      "annualised_volatility_60d": 0.22675690529162057,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.31967195100154555
+    },
+    {
+      "date": "2023-03-21",
+      "annualised_volatility_60d": 0.23593795756941807,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.3207562393429335
+    },
+    {
+      "date": "2023-03-28",
+      "annualised_volatility_60d": 0.2112788924819119,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.3073881519524877
+    },
+    {
+      "date": "2023-04-04",
+      "annualised_volatility_60d": 0.1926415808522925,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.286461803779408
+    },
+    {
+      "date": "2023-04-11",
+      "annualised_volatility_60d": 0.1935075809330886,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.2940115294496948
+    },
+    {
+      "date": "2023-04-18",
+      "annualised_volatility_60d": 0.18669621261064034,
+      "historical_var_99_250d": 0.04921904987067369,
+      "drawdown": -0.30555480059164797
+    },
+    {
+      "date": "2023-04-25",
+      "annualised_volatility_60d": 0.18191608449872165,
+      "historical_var_99_250d": 0.04725042607055128,
+      "drawdown": -0.3244069784427903
+    },
+    {
+      "date": "2023-05-05",
+      "annualised_volatility_60d": 0.166967932480948,
+      "historical_var_99_250d": 0.04725042607055128,
+      "drawdown": -0.3234676897471316
+    },
+    {
+      "date": "2023-05-12",
+      "annualised_volatility_60d": 0.16809475802790688,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.3020983564487534
+    },
+    {
+      "date": "2023-05-19",
+      "annualised_volatility_60d": 0.15564175019171228,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.30013898357724567
+    },
+    {
+      "date": "2023-05-26",
+      "annualised_volatility_60d": 0.135965253336885,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.3045269816536057
+    },
+    {
+      "date": "2023-06-02",
+      "annualised_volatility_60d": 0.13007682941230703,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.28678934570838654
+    },
+    {
+      "date": "2023-06-09",
+      "annualised_volatility_60d": 0.12958349403056926,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.27802058750678793
+    },
+    {
+      "date": "2023-06-16",
+      "annualised_volatility_60d": 0.1042300063293768,
+      "historical_var_99_250d": 0.0454946752004116,
+      "drawdown": -0.2724807212739401
+    },
+    {
+      "date": "2023-06-23",
+      "annualised_volatility_60d": 0.10750116992318695,
+      "historical_var_99_250d": 0.0454946752004116,
+      "drawdown": -0.2590878755990893
+    },
+    {
+      "date": "2023-06-30",
+      "annualised_volatility_60d": 0.10640860615542966,
+      "historical_var_99_250d": 0.0454946752004116,
+      "drawdown": -0.26160198808468194
+    },
+    {
+      "date": "2023-07-07",
+      "annualised_volatility_60d": 0.10641472727930094,
+      "historical_var_99_250d": 0.0454946752004116,
+      "drawdown": -0.25349276908820206
+    },
+    {
+      "date": "2023-07-14",
+      "annualised_volatility_60d": 0.10741294754683625,
+      "historical_var_99_250d": 0.0454946752004116,
+      "drawdown": -0.2307840503069145
+    },
+    {
+      "date": "2023-07-21",
+      "annualised_volatility_60d": 0.10452612672704505,
+      "historical_var_99_250d": 0.0454946752004116,
+      "drawdown": -0.21210222813754376
+    },
+    {
+      "date": "2023-07-28",
+      "annualised_volatility_60d": 0.09780296091486526,
+      "historical_var_99_250d": 0.0454946752004116,
+      "drawdown": -0.19929718430490595
+    },
+    {
+      "date": "2023-08-04",
+      "annualised_volatility_60d": 0.10409257742087774,
+      "historical_var_99_250d": 0.0454946752004116,
+      "drawdown": -0.17711545609070722
+    },
+    {
+      "date": "2023-08-11",
+      "annualised_volatility_60d": 0.11268388464688994,
+      "historical_var_99_250d": 0.0454946752004116,
+      "drawdown": -0.15941152567729722
+    },
+    {
+      "date": "2023-08-18",
+      "annualised_volatility_60d": 0.15546812115090275,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.19346148805872454
+    },
+    {
+      "date": "2023-08-25",
+      "annualised_volatility_60d": 0.15595794635134155,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.18850466691734735
+    },
+    {
+      "date": "2023-09-05",
+      "annualised_volatility_60d": 0.15576800944097427,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.15515260720643953
+    },
+    {
+      "date": "2023-09-12",
+      "annualised_volatility_60d": 0.1643215784281606,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.1490451292307774
+    },
+    {
+      "date": "2023-09-19",
+      "annualised_volatility_60d": 0.16967878644974632,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.17620727538773284
+    },
+    {
+      "date": "2023-09-26",
+      "annualised_volatility_60d": 0.19288400891509816,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.23162661693812814
+    },
+    {
+      "date": "2023-10-03",
+      "annualised_volatility_60d": 0.20531370579817912,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.24616940455543457
+    },
+    {
+      "date": "2023-10-10",
+      "annualised_volatility_60d": 0.20793299723583147,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.22567006253518274
+    },
+    {
+      "date": "2023-10-17",
+      "annualised_volatility_60d": 0.20903508872945487,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.24129723293997773
+    },
+    {
+      "date": "2023-10-24",
+      "annualised_volatility_60d": 0.21815138639851353,
+      "historical_var_99_250d": 0.0454946752004116,
+      "drawdown": -0.25612959980193184
+    },
+    {
+      "date": "2023-10-31",
+      "annualised_volatility_60d": 0.2341000398639755,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.3103163605535766
+    },
+    {
+      "date": "2023-11-07",
+      "annualised_volatility_60d": 0.24264573933781575,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.2738025941634775
+    },
+    {
+      "date": "2023-11-14",
+      "annualised_volatility_60d": 0.2337858805968995,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.24871444020819566
+    },
+    {
+      "date": "2023-11-21",
+      "annualised_volatility_60d": 0.23858010881299835,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.25673917507266497
+    },
+    {
+      "date": "2023-11-28",
+      "annualised_volatility_60d": 0.24006730586948627,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.27214657258031516
+    },
+    {
+      "date": "2023-12-05",
+      "annualised_volatility_60d": 0.23830971388541816,
+      "historical_var_99_250d": 0.04660308982783063,
+      "drawdown": -0.2601479647634718
+    },
+    {
+      "date": "2023-12-12",
+      "annualised_volatility_60d": 0.23746686547851292,
+      "historical_var_99_250d": 0.04108352672939601,
+      "drawdown": -0.2422835064772083
+    },
+    {
+      "date": "2023-12-19",
+      "annualised_volatility_60d": 0.22328721984673872,
+      "historical_var_99_250d": 0.04108352672939601,
+      "drawdown": -0.2630500857986793
+    },
+    {
+      "date": "2023-12-26",
+      "annualised_volatility_60d": 0.2126874223511863,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.24567165162530824
+    },
+    {
+      "date": "2024-01-03",
+      "annualised_volatility_60d": 0.20961530061887526,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.22720840468841585
+    },
+    {
+      "date": "2024-01-10",
+      "annualised_volatility_60d": 0.20629300091844724,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.22293521429480712
+    },
+    {
+      "date": "2024-01-17",
+      "annualised_volatility_60d": 0.1954776408878364,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.21833748582130796
+    },
+    {
+      "date": "2024-01-24",
+      "annualised_volatility_60d": 0.1617180990980029,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.21023898867930724
+    },
+    {
+      "date": "2024-01-31",
+      "annualised_volatility_60d": 0.1464245391256391,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.214988538324844
+    },
+    {
+      "date": "2024-02-07",
+      "annualised_volatility_60d": 0.1316334803709922,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.1868848137839837
+    },
+    {
+      "date": "2024-02-21",
+      "annualised_volatility_60d": 0.1211980940916121,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.16198094050002376
+    },
+    {
+      "date": "2024-02-28",
+      "annualised_volatility_60d": 0.11495290881455206,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.15208002784317642
+    },
+    {
+      "date": "2024-03-06",
+      "annualised_volatility_60d": 0.11043389348542697,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.14019757457871185
+    },
+    {
+      "date": "2024-03-13",
+      "annualised_volatility_60d": 0.128311159330779,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.14008234170486755
+    },
+    {
+      "date": "2024-03-20",
+      "annualised_volatility_60d": 0.1298677056148258,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.14762567209777144
+    },
+    {
+      "date": "2024-03-27",
+      "annualised_volatility_60d": 0.13387452069351422,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.13322833665977685
+    },
+    {
+      "date": "2024-04-03",
+      "annualised_volatility_60d": 0.1365091696911161,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.1372322897927265
+    },
+    {
+      "date": "2024-04-10",
+      "annualised_volatility_60d": 0.1387430423756603,
+      "historical_var_99_250d": 0.03462875416547061,
+      "drawdown": -0.13922938815051478
+    },
+    {
+      "date": "2024-04-17",
+      "annualised_volatility_60d": 0.17089049586929314,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.1710361773114193
+    },
+    {
+      "date": "2024-04-25",
+      "annualised_volatility_60d": 0.1816295285624504,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.15847275414261375
+    },
+    {
+      "date": "2024-05-07",
+      "annualised_volatility_60d": 0.1838790306990287,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.1202990445454547
+    },
+    {
+      "date": "2024-05-14",
+      "annualised_volatility_60d": 0.18239632954811522,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.12456962550028139
+    },
+    {
+      "date": "2024-05-21",
+      "annualised_volatility_60d": 0.18247386988433473,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.09254926057050417
+    },
+    {
+      "date": "2024-05-28",
+      "annualised_volatility_60d": 0.18235477521033375,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.08941519792181718
+    },
+    {
+      "date": "2024-06-04",
+      "annualised_volatility_60d": 0.1844388514324668,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.08278955222634565
+    },
+    {
+      "date": "2024-06-11",
+      "annualised_volatility_60d": 0.1727217410783376,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.08041706397719683
+    },
+    {
+      "date": "2024-06-18",
+      "annualised_volatility_60d": 0.17016598435135036,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.07982799477439928
+    },
+    {
+      "date": "2024-06-25",
+      "annualised_volatility_60d": 0.17148347404583086,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.09222645658284101
+    },
+    {
+      "date": "2024-07-02",
+      "annualised_volatility_60d": 0.17023893796545422,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.08116319409000727
+    },
+    {
+      "date": "2024-07-09",
+      "annualised_volatility_60d": 0.1682569932042985,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.06509088355516335
+    },
+    {
+      "date": "2024-07-16",
+      "annualised_volatility_60d": 0.13652095074954235,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.07880929887865396
+    },
+    {
+      "date": "2024-07-23",
+      "annualised_volatility_60d": 0.12369904470743105,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.09407745737346196
+    },
+    {
+      "date": "2024-07-30",
+      "annualised_volatility_60d": 0.11789236252608694,
+      "historical_var_99_250d": 0.03937835483440182,
+      "drawdown": -0.0888201481383275
+    },
+    {
+      "date": "2024-08-06",
+      "annualised_volatility_60d": 0.1503054625083417,
+      "historical_var_99_250d": 0.04012911676592929,
+      "drawdown": -0.11174499814471806
+    },
+    {
+      "date": "2024-08-13",
+      "annualised_volatility_60d": 0.14748507336966013,
+      "historical_var_99_250d": 0.04012911676592929,
+      "drawdown": -0.09826016447313701
+    },
+    {
+      "date": "2024-08-20",
+      "annualised_volatility_60d": 0.14546346544550662,
+      "historical_var_99_250d": 0.03607992598950615,
+      "drawdown": -0.07001715503030581
+    },
+    {
+      "date": "2024-08-27",
+      "annualised_volatility_60d": 0.14079313064034643,
+      "historical_var_99_250d": 0.03607992598950615,
+      "drawdown": -0.05627710380412709
+    },
+    {
+      "date": "2024-09-05",
+      "annualised_volatility_60d": 0.14201472678953678,
+      "historical_var_99_250d": 0.03607992598950615,
+      "drawdown": -0.06560208232263831
+    },
+    {
+      "date": "2024-09-12",
+      "annualised_volatility_60d": 0.1381196703964582,
+      "historical_var_99_250d": 0.03607992598950615,
+      "drawdown": -0.07486130910892319
+    },
+    {
+      "date": "2024-09-19",
+      "annualised_volatility_60d": 0.13792788948091292,
+      "historical_var_99_250d": 0.03607992598950615,
+      "drawdown": -0.06294612699340607
+    },
+    {
+      "date": "2024-09-26",
+      "annualised_volatility_60d": 0.137061349651328,
+      "historical_var_99_250d": 0.03541015944114205,
+      "drawdown": -0.041452382295700474
+    },
+    {
+      "date": "2024-10-03",
+      "annualised_volatility_60d": 0.13741480750218366,
+      "historical_var_99_250d": 0.03233235515722415,
+      "drawdown": -0.050042809300818725
+    },
+    {
+      "date": "2024-10-10",
+      "annualised_volatility_60d": 0.13805558461085016,
+      "historical_var_99_250d": 0.03233235515722415,
+      "drawdown": -0.03745182437192096
+    },
+    {
+      "date": "2024-10-17",
+      "annualised_volatility_60d": 0.1354468773382147,
+      "historical_var_99_250d": 0.03233235515722415,
+      "drawdown": -0.035363850363655525
+    },
+    {
+      "date": "2024-10-24",
+      "annualised_volatility_60d": 0.1386674229510287,
+      "historical_var_99_250d": 0.03233235515722415,
+      "drawdown": -0.053198910447459724
+    },
+    {
+      "date": "2024-10-31",
+      "annualised_volatility_60d": 0.10091533110371508,
+      "historical_var_99_250d": 0.027103955460009554,
+      "drawdown": -0.049012061885731484
+    },
+    {
+      "date": "2024-11-07",
+      "annualised_volatility_60d": 0.10239426427442072,
+      "historical_var_99_250d": 0.027103955460009554,
+      "drawdown": -0.055071304980820135
+    },
+    {
+      "date": "2024-11-14",
+      "annualised_volatility_60d": 0.09793207825747044,
+      "historical_var_99_250d": 0.027103955460009554,
+      "drawdown": -0.0825955760751913
+    },
+    {
+      "date": "2024-11-21",
+      "annualised_volatility_60d": 0.10273957394307356,
+      "historical_var_99_250d": 0.02389903647537687,
+      "drawdown": -0.0862683627204871
+    },
+    {
+      "date": "2024-11-28",
+      "annualised_volatility_60d": 0.10165217014001156,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.07615344966103021
+    },
+    {
+      "date": "2024-12-05",
+      "annualised_volatility_60d": 0.11826820932708398,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.050832863703868414
+    },
+    {
+      "date": "2024-12-12",
+      "annualised_volatility_60d": 0.10982884550205543,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.05312717717479931
+    },
+    {
+      "date": "2024-12-19",
+      "annualised_volatility_60d": 0.10875484455095126,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.06548301624315234
+    },
+    {
+      "date": "2024-12-26",
+      "annualised_volatility_60d": 0.11095464769757687,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.04569758972639648
+    },
+    {
+      "date": "2025-01-03",
+      "annualised_volatility_60d": 0.11365213487396411,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.05708827627127788
+    },
+    {
+      "date": "2025-01-10",
+      "annualised_volatility_60d": 0.11653016136426575,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.07744134868785302
+    },
+    {
+      "date": "2025-01-17",
+      "annualised_volatility_60d": 0.11538670288561864,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.06511294651497501
+    },
+    {
+      "date": "2025-01-24",
+      "annualised_volatility_60d": 0.12004160905632869,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.04799463837640028
+    },
+    {
+      "date": "2025-02-07",
+      "annualised_volatility_60d": 0.11980318021300315,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.04837718478031616
+    },
+    {
+      "date": "2025-02-14",
+      "annualised_volatility_60d": 0.11721112823184193,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.054434286988887526
+    },
+    {
+      "date": "2025-02-21",
+      "annualised_volatility_60d": 0.11239139904950242,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.04364396052677333
+    },
+    {
+      "date": "2025-02-28",
+      "annualised_volatility_60d": 0.11322695057908445,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.038472619513308715
+    },
+    {
+      "date": "2025-03-07",
+      "annualised_volatility_60d": 0.09911052112201249,
+      "historical_var_99_250d": 0.020158927775607908,
+      "drawdown": -0.008997865411585981
+    },
+    {
+      "date": "2025-03-14",
+      "annualised_volatility_60d": 0.09897098982155013,
+      "historical_var_99_250d": 0.0200709804376922,
+      "drawdown": -0.0003087195748874283
+    },
+    {
+      "date": "2025-03-21",
+      "annualised_volatility_60d": 0.09907032970883065,
+      "historical_var_99_250d": 0.0200709804376922,
+      "drawdown": -0.011007103267146712
+    },
+    {
+      "date": "2025-03-28",
+      "annualised_volatility_60d": 0.09953974717040494,
+      "historical_var_99_250d": 0.0200709804376922,
+      "drawdown": -0.007108127996416469
+    },
+    {
+      "date": "2025-04-04",
+      "annualised_volatility_60d": 0.17899268632482213,
+      "historical_var_99_250d": 0.029149740724202657,
+      "drawdown": -0.07627051140686836
+    },
+    {
+      "date": "2025-04-14",
+      "annualised_volatility_60d": 0.29244152977574434,
+      "historical_var_99_250d": 0.04012911676592929,
+      "drawdown": -0.03527067181309851
+    },
+    {
+      "date": "2025-04-21",
+      "annualised_volatility_60d": 0.2962341363892081,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": -0.06640980562734045
+    },
+    {
+      "date": "2025-04-28",
+      "annualised_volatility_60d": 0.2973212283920955,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": -0.03685061565627623
+    },
+    {
+      "date": "2025-05-08",
+      "annualised_volatility_60d": 0.29847757251296697,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": -0.008314495620366347
+    },
+    {
+      "date": "2025-05-15",
+      "annualised_volatility_60d": 0.3006617174863118,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2025-05-22",
+      "annualised_volatility_60d": 0.30434548091013447,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": -0.007745123806779164
+    },
+    {
+      "date": "2025-05-29",
+      "annualised_volatility_60d": 0.3041541123110902,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": -0.0012978194550806732
+    },
+    {
+      "date": "2025-06-05",
+      "annualised_volatility_60d": 0.3034483514795356,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": -0.0035481663189710355
+    },
+    {
+      "date": "2025-06-12",
+      "annualised_volatility_60d": 0.30574541847137343,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": -0.01244830245693529
+    },
+    {
+      "date": "2025-06-19",
+      "annualised_volatility_60d": 0.30648076791590406,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2025-06-26",
+      "annualised_volatility_60d": 0.30598870101497283,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": -0.0002179330592126938
+    },
+    {
+      "date": "2025-07-03",
+      "annualised_volatility_60d": 0.262711095861388,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": -0.0005432031219795297
+    },
+    {
+      "date": "2025-07-10",
+      "annualised_volatility_60d": 0.12985295079165773,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2025-07-17",
+      "annualised_volatility_60d": 0.11965892982173272,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2025-07-24",
+      "annualised_volatility_60d": 0.11959809478505835,
+      "historical_var_99_250d": 0.030297524320580124,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2025-07-31",
+      "annualised_volatility_60d": 0.15589859469259904,
+      "historical_var_99_250d": 0.041145774762172425,
+      "drawdown": -0.04774335611187863
+    },
+    {
+      "date": "2025-08-07",
+      "annualised_volatility_60d": 0.16578319461231147,
+      "historical_var_99_250d": 0.03461261116171893,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2025-08-14",
+      "annualised_volatility_60d": 0.16312857280255288,
+      "historical_var_99_250d": 0.03461261116171893,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2025-08-21",
+      "annualised_volatility_60d": 0.17028341496884639,
+      "historical_var_99_250d": 0.03461261116171893,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2025-08-28",
+      "annualised_volatility_60d": 0.19723940889676778,
+      "historical_var_99_250d": 0.03847411737749756,
+      "drawdown": -0.002493646915036729
+    },
+    {
+      "date": "2025-09-08",
+      "annualised_volatility_60d": 0.20524294271433796,
+      "historical_var_99_250d": 0.03847411737749756,
+      "drawdown": -0.038180024894467035
+    },
+    {
+      "date": "2025-09-15",
+      "annualised_volatility_60d": 0.20405430529509072,
+      "historical_var_99_250d": 0.03847411737749756,
+      "drawdown": -0.00088226028889693
+    },
+    {
+      "date": "2025-09-22",
+      "annualised_volatility_60d": 0.21109472811957816,
+      "historical_var_99_250d": 0.03847411737749756,
+      "drawdown": -0.029246947261820533
+    },
+    {
+      "date": "2025-09-29",
+      "annualised_volatility_60d": 0.21298608537536404,
+      "historical_var_99_250d": 0.03847411737749756,
+      "drawdown": -0.006324116961520132
+    },
+    {
+      "date": "2025-10-06",
+      "annualised_volatility_60d": 0.21864705689644368,
+      "historical_var_99_250d": 0.03847411737749756,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2025-10-13",
+      "annualised_volatility_60d": 0.2202751781188658,
+      "historical_var_99_250d": 0.03847411737749756,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2025-10-20",
+      "annualised_volatility_60d": 0.25320338269637876,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.07280165351844126
+    },
+    {
+      "date": "2025-10-27",
+      "annualised_volatility_60d": 0.23972863948407963,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.05664812761937377
+    },
+    {
+      "date": "2025-11-03",
+      "annualised_volatility_60d": 0.24039275777275718,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.06938580991119447
+    },
+    {
+      "date": "2025-11-10",
+      "annualised_volatility_60d": 0.24699962379247078,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.09025582866410109
+    },
+    {
+      "date": "2025-11-17",
+      "annualised_volatility_60d": 0.24812509974320637,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.04502944117084684
+    },
+    {
+      "date": "2025-11-24",
+      "annualised_volatility_60d": 0.22715494655771604,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.03442565120413077
+    },
+    {
+      "date": "2025-12-01",
+      "annualised_volatility_60d": 0.2186564596249436,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.02393861402792352
+    },
+    {
+      "date": "2025-12-08",
+      "annualised_volatility_60d": 0.2178437842992282,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.0017731166668412124
+    },
+    {
+      "date": "2025-12-15",
+      "annualised_volatility_60d": 0.22617662766308233,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.05872325726383143
+    },
+    {
+      "date": "2025-12-22",
+      "annualised_volatility_60d": 0.23591018900641783,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2025-12-29",
+      "annualised_volatility_60d": 0.23362093325684824,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.0115884958204161
+    },
+    {
+      "date": "2026-01-07",
+      "annualised_volatility_60d": 0.2318075861453367,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": 0.0
+    },
+    {
+      "date": "2026-01-14",
+      "annualised_volatility_60d": 0.19839484170824084,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.008980294086997853
+    },
+    {
+      "date": "2026-01-21",
+      "annualised_volatility_60d": 0.18977681655186784,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.005350233683530048
+    },
+    {
+      "date": "2026-01-28",
+      "annualised_volatility_60d": 0.18293639004817927,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.040966973116547956
+    },
+    {
+      "date": "2026-02-04",
+      "annualised_volatility_60d": 0.17197978728624877,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.04864691631978979
+    },
+    {
+      "date": "2026-02-11",
+      "annualised_volatility_60d": 0.17045209043003362,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.03760316539282116
+    },
+    {
+      "date": "2026-02-25",
+      "annualised_volatility_60d": 0.17114786149228442,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.013785243980091066
+    },
+    {
+      "date": "2026-03-04",
+      "annualised_volatility_60d": 0.18615292121537566,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.05286880913337377
+    },
+    {
+      "date": "2026-03-11",
+      "annualised_volatility_60d": 0.25027191816380556,
+      "historical_var_99_250d": 0.06101476475747935,
+      "drawdown": -0.08675088592416302
+    },
+    {
+      "date": "2026-03-18",
+      "annualised_volatility_60d": 0.24324309994985954,
+      "historical_var_99_250d": 0.06101476475747935,
+      "drawdown": -0.0919856185454816
+    },
+    {
+      "date": "2026-03-25",
+      "annualised_volatility_60d": 0.25513110492269664,
+      "historical_var_99_250d": 0.06101476475747935,
+      "drawdown": -0.11972972940064086
+    },
+    {
+      "date": "2026-04-01",
+      "annualised_volatility_60d": 0.25584987178603885,
+      "historical_var_99_250d": 0.06101476475747935,
+      "drawdown": -0.09779108234400136
+    },
+    {
+      "date": "2026-04-08",
+      "annualised_volatility_60d": 0.2702036051808868,
+      "historical_var_99_250d": 0.05007999802552637,
+      "drawdown": -0.06612306085512942
+    },
+    {
+      "date": "2026-04-15",
+      "annualised_volatility_60d": 0.269914451153328,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.05272055427233102
+    },
+    {
+      "date": "2026-04-22",
+      "annualised_volatility_60d": 0.26989920702536585,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.025272911490681782
+    },
+    {
+      "date": "2026-05-04",
+      "annualised_volatility_60d": 0.2679066295263268,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.031218325063028796
+    },
+    {
+      "date": "2026-05-11",
+      "annualised_volatility_60d": 0.2683217423054897,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.01868356631767243
+    },
+    {
+      "date": "2026-05-18",
+      "annualised_volatility_60d": 0.26494496811791113,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.01047623882592108
+    },
+    {
+      "date": "2026-05-25",
+      "annualised_volatility_60d": 0.2645732500241329,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.0215936099698274
+    },
+    {
+      "date": "2026-06-01",
+      "annualised_volatility_60d": 0.2551694222609249,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.0355726482965919
+    },
+    {
+      "date": "2026-06-08",
+      "annualised_volatility_60d": 0.1976741120828872,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.061694119541995995
+    },
+    {
+      "date": "2026-06-15",
+      "annualised_volatility_60d": 0.194693287358869,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.04892203022055763
+    },
+    {
+      "date": "2026-06-22",
+      "annualised_volatility_60d": 0.1594913720994015,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.039476208840904525
+    },
+    {
+      "date": "2026-06-29",
+      "annualised_volatility_60d": 0.15094334238470222,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.024687322774170073
+    },
+    {
+      "date": "2026-07-06",
+      "annualised_volatility_60d": 0.11733247553158013,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.027540636391180096
+    },
+    {
+      "date": "2026-07-13",
+      "annualised_volatility_60d": 0.11913622290203099,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.05116958972053587
+    },
+    {
+      "date": "2026-07-20",
+      "annualised_volatility_60d": 0.13182298006491971,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.07619899740155311
+    },
+    {
+      "date": "2026-07-27",
+      "annualised_volatility_60d": 0.14532812991623062,
+      "historical_var_99_250d": 0.039318994337525046,
+      "drawdown": -0.11492424661264222
+    },
+    {
+      "date": "2026-08-03",
+      "annualised_volatility_60d": 0.15981698409681827,
+      "historical_var_99_250d": 0.03225768764539924,
+      "drawdown": -0.0572975754842312
+    },
+    {
+      "date": "2026-08-10",
+      "annualised_volatility_60d": 0.15703410658558156,
+      "historical_var_99_250d": 0.03225768764539924,
+      "drawdown": -0.052629334012046836
+    },
+    {
+      "date": "2026-08-17",
+      "annualised_volatility_60d": 0.1622032530537247,
+      "historical_var_99_250d": 0.03225768764539924,
+      "drawdown": -0.07541409169268187
+    },
+    {
+      "date": "2026-08-24",
+      "annualised_volatility_60d": 0.16825042880043325,
+      "historical_var_99_250d": 0.03225768764539924,
+      "drawdown": -0.04295369878858779
+    },
+    {
+      "date": "2026-09-03",
+      "annualised_volatility_60d": 0.16486805645862482,
+      "historical_var_99_250d": 0.0322348246078509,
+      "drawdown": -0.03251798597674227
+    },
+    {
+      "date": "2026-09-10",
+      "annualised_volatility_60d": 0.1658207205953567,
+      "historical_var_99_250d": 0.0322348246078509,
+      "drawdown": -0.02501163172584364
+    },
+    {
+      "date": "2026-09-17",
+      "annualised_volatility_60d": 0.1728552213561587,
+      "historical_var_99_250d": 0.0322348246078509,
+      "drawdown": -0.02570361539666932
+    },
+    {
+      "date": "2026-09-24",
+      "annualised_volatility_60d": 0.17449661339573638,
+      "historical_var_99_250d": 0.0322348246078509,
+      "drawdown": -0.046042051028861164
+    },
+    {
+      "date": "2026-09-30",
+      "annualised_volatility_60d": 0.17412187840474658,
+      "historical_var_99_250d": 0.0322348246078509,
+      "drawdown": -0.058189671880618965
+    }
+  ],
+  "model_methods": {
+    "primary_500d": {
+      "ACB": "own",
+      "BID": "own",
+      "BSR": "own",
+      "CTG": "own",
+      "FPT": "own",
+      "GAS": "own",
+      "GVR": "own",
+      "HDB": "own",
+      "HPG": "own",
+      "LPB": "own",
+      "MBB": "own",
+      "MCH": "own",
+      "MSN": "own",
+      "MWG": "own",
+      "SAB": "own",
+      "SHB": "own",
+      "SSB": "own",
+      "SSI": "own",
+      "STB": "own",
+      "TCB": "own",
+      "TCX": "sector_proxy_excluding_self",
+      "VCB": "own",
+      "VHM": "own",
+      "VIB": "own",
+      "VIC": "own",
+      "VJC": "own",
+      "VNM": "own",
+      "VPB": "own",
+      "VPL": "sector_proxy_excluding_self",
+      "VRE": "own"
+    },
+    "recent_250d": {
+      "ACB": "own",
+      "BID": "own",
+      "BSR": "own",
+      "CTG": "own",
+      "FPT": "own",
+      "GAS": "own",
+      "GVR": "own",
+      "HDB": "own",
+      "HPG": "own",
+      "LPB": "own",
+      "MBB": "own",
+      "MCH": "own",
+      "MSN": "own",
+      "MWG": "own",
+      "SAB": "own",
+      "SHB": "own",
+      "SSB": "own",
+      "SSI": "own",
+      "STB": "own",
+      "TCB": "own",
+      "TCX": "sector_proxy_excluding_self",
+      "VCB": "own",
+      "VHM": "own",
+      "VIB": "own",
+      "VIC": "own",
+      "VJC": "own",
+      "VNM": "own",
+      "VPB": "own",
+      "VPL": "own",
+      "VRE": "own"
+    }
+  }
+}
