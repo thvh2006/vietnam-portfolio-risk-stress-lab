@@ -19,6 +19,11 @@ from typing import Iterable
 
 TRADING_DAYS = 252
 Z_99 = 2.326347874
+BASE_LIQUIDITY_PARTICIPATION = 0.20
+STRESS_LIQUIDITY_PARTICIPATION = 0.10
+STRESS_VOLUME_HAIRCUT = 0.50
+INITIAL_MARGIN_RATE = 0.17
+STRESS_MARGIN_MULTIPLIER = 1.50
 
 
 @dataclass(frozen=True)
@@ -44,6 +49,17 @@ def quantile(values: Iterable[float], probability: float) -> float:
 
 def compound(returns: Iterable[float]) -> float:
     return math.exp(sum(returns)) - 1.0
+
+
+def overlapping_returns(returns: list[float], width: int) -> list[float]:
+    if width < 1 or width > len(returns):
+        raise ValueError("window width must be between one and the sample length")
+    return [compound(returns[end - width + 1 : end + 1]) for end in range(width - 1, len(returns))]
+
+
+def historical_expected_shortfall(returns: list[float], confidence: float) -> float:
+    threshold = quantile(returns, 1.0 - confidence)
+    return max(0.0, -statistics.fmean(value for value in returns if value <= threshold))
 
 
 def load_holdings(path: Path) -> list[Holding]:
@@ -136,6 +152,36 @@ def covariance(left: list[float], right: list[float]) -> float:
     return sum((x - mean_left) * (y - mean_right) for x, y in zip(left, right)) / (len(left) - 1)
 
 
+def symmetric_eigenvalues(matrix: list[list[float]], tolerance: float = 1e-14) -> list[float]:
+    """Return eigenvalues of a real symmetric matrix using Jacobi rotations."""
+    size = len(matrix)
+    if size == 0 or any(len(row) != size for row in matrix):
+        raise ValueError("eigenvalue check requires a non-empty square matrix")
+    work = [row[:] for row in matrix]
+    scale = max(1.0, max(abs(value) for row in work for value in row))
+    for _ in range(50 * size * size):
+        p, q = max(
+            ((i, j) for i in range(size) for j in range(i + 1, size)),
+            key=lambda pair: abs(work[pair[0]][pair[1]]),
+            default=(0, 0),
+        )
+        if p == q or abs(work[p][q]) <= tolerance * scale:
+            break
+        angle = 0.5 * math.atan2(2.0 * work[p][q], work[q][q] - work[p][p])
+        cosine, sine = math.cos(angle), math.sin(angle)
+        app, aqq, apq = work[p][p], work[q][q], work[p][q]
+        work[p][p] = cosine * cosine * app - 2.0 * sine * cosine * apq + sine * sine * aqq
+        work[q][q] = sine * sine * app + 2.0 * sine * cosine * apq + cosine * cosine * aqq
+        work[p][q] = work[q][p] = 0.0
+        for index in range(size):
+            if index in (p, q):
+                continue
+            aip, aiq = work[index][p], work[index][q]
+            work[index][p] = work[p][index] = cosine * aip - sine * aiq
+            work[index][q] = work[q][index] = sine * aip + cosine * aiq
+    return sorted(work[index][index] for index in range(size))
+
+
 def risk_stats(returns: list[float]) -> dict[str, float]:
     mean = statistics.fmean(returns)
     daily_vol = statistics.stdev(returns)
@@ -196,6 +242,31 @@ def kupiec_test(exception_count: int, observations: int, expected_rate: float = 
     log_alt = (observations - exception_count) * math.log(1 - bounded_rate) + exception_count * math.log(bounded_rate)
     statistic = max(0.0, -2.0 * (log_null - log_alt))
     return {"likelihood_ratio": statistic, "p_value": math.erfc(math.sqrt(statistic / 2.0)), "observed_rate": observed_rate}
+
+
+def christoffersen_test(exceptions: list[int], kupiec_lr: float) -> dict[str, float | dict[str, int]]:
+    transitions = {"n00": 0, "n01": 0, "n10": 0, "n11": 0}
+    for previous, current in zip(exceptions, exceptions[1:]):
+        transitions[f"n{previous}{current}"] += 1
+    n00, n01, n10, n11 = (transitions[key] for key in ("n00", "n01", "n10", "n11"))
+
+    def safe_rate(successes: int, total: int) -> float:
+        return min(max(successes / total if total else 0.0, 1e-12), 1.0 - 1e-12)
+
+    p01 = safe_rate(n01, n00 + n01)
+    p11 = safe_rate(n11, n10 + n11)
+    pooled = safe_rate(n01 + n11, n00 + n01 + n10 + n11)
+    log_independent = (n00 + n10) * math.log(1.0 - pooled) + (n01 + n11) * math.log(pooled)
+    log_markov = n00 * math.log(1.0 - p01) + n01 * math.log(p01) + n10 * math.log(1.0 - p11) + n11 * math.log(p11)
+    lr_ind = max(0.0, -2.0 * (log_independent - log_markov))
+    lr_cc = kupiec_lr + lr_ind
+    return {
+        "transitions": transitions,
+        "independence_likelihood_ratio": lr_ind,
+        "independence_p_value": math.erfc(math.sqrt(lr_ind / 2.0)),
+        "conditional_coverage_likelihood_ratio": lr_cc,
+        "conditional_coverage_p_value": math.exp(-lr_cc / 2.0),
+    }
 
 
 def max_drawdown(returns: list[float]) -> float:
@@ -274,10 +345,11 @@ def run_analysis(root: Path) -> dict:
             dates, [(member.analytical_weight, own[member.ticker]) for member in members]
         )
 
-    def build_matrix(window: int) -> tuple[list[str], dict[str, list[float]], dict[str, str]]:
+    def build_matrix(window: int) -> tuple[list[str], dict[str, list[float]], dict[str, str], dict[str, dict[str, float]]]:
         selected_dates = dates[-window:]
         matrix: dict[str, list[float]] = {}
         methods: dict[str, str] = {}
+        proxy_controls: dict[str, dict[str, float]] = {}
         for holding in stock_holdings:
             candidate = own[holding.ticker]
             own_values = [candidate[day] for day in selected_dates]
@@ -287,12 +359,31 @@ def run_analysis(root: Path) -> dict:
             else:
                 peers = [member for member in sector_members[holding.sector] if member.ticker != holding.ticker]
                 chosen = weighted_series(dates, [(m.analytical_weight, own[m.ticker]) for m in peers]) if peers else sector_proxy[holding.sector]
-                methods[holding.ticker] = "sector_proxy_excluding_self"
+                proxy_values = [float(chosen[day] or 0.0) for day in selected_dates]
+                eligible_peer_vols = []
+                for peer in peers:
+                    peer_values = [own[peer.ticker][day] for day in selected_dates]
+                    if all(value is not None for value in peer_values):
+                        eligible_peer_vols.append(statistics.stdev(float(value) for value in peer_values))
+                proxy_volatility = statistics.stdev(proxy_values)
+                volatility_floor = statistics.median(eligible_peer_vols) if eligible_peer_vols else proxy_volatility
+                scale = max(1.0, volatility_floor / proxy_volatility) if proxy_volatility else 1.0
+                matrix[holding.ticker] = [value * scale for value in proxy_values]
+                methods[holding.ticker] = "sector_proxy_excluding_self_peer_median_vol_floor"
+                proxy_controls[holding.ticker] = {
+                    "proxy_daily_volatility": proxy_volatility,
+                    "peer_median_daily_volatility_floor": volatility_floor,
+                    "applied_scale": scale,
+                }
+                continue
             matrix[holding.ticker] = [float(chosen[day] or 0.0) for day in selected_dates]
-        return selected_dates, matrix, methods
+        return selected_dates, matrix, methods, proxy_controls
 
-    primary_dates, primary_matrix, primary_methods = build_matrix(500)
-    recent_dates, recent_matrix, recent_methods = build_matrix(250)
+    primary_dates, primary_matrix, primary_methods, primary_proxy_controls = build_matrix(500)
+    recent_dates, recent_matrix, recent_methods, recent_proxy_controls = build_matrix(250)
+    for row in audit:
+        row["primary_500d_method"] = primary_methods[row["ticker"]]
+        row["recent_250d_method"] = recent_methods[row["ticker"]]
     weights = {holding.ticker: holding.analytical_weight for holding in stock_holdings}
     cash_weight = by_ticker["CASH"].analytical_weight
 
@@ -318,9 +409,11 @@ def run_analysis(root: Path) -> dict:
     full_dates = [day for day in dates if benchmark_returns[day] is not None]
     full_matrix: dict[str, list[float]] = {}
     for holding in stock_holdings:
-        proxy = sector_proxy[holding.sector]
+        peers = [member for member in sector_members[holding.sector] if member.ticker != holding.ticker]
+        proxy = weighted_series(dates, [(m.analytical_weight, own[m.ticker]) for m in peers]) if peers else sector_proxy[holding.sector]
+        proxy_scale = primary_proxy_controls.get(holding.ticker, {}).get("applied_scale", 1.0)
         full_matrix[holding.ticker] = [
-            float(own[holding.ticker][day] if own[holding.ticker][day] is not None else proxy[day] or 0.0)
+            float(own[holding.ticker][day] if own[holding.ticker][day] is not None else (proxy[day] or 0.0) * proxy_scale)
             for day in full_dates
         ]
     full_portfolio = portfolio_from_matrix(full_matrix, len(full_dates))
@@ -329,6 +422,10 @@ def run_analysis(root: Path) -> dict:
     for left in weights:
         for right in weights:
             covariance_matrix[(left, right)] = covariance(primary_matrix[left], primary_matrix[right])
+    covariance_grid = [[covariance_matrix[(left, right)] for right in weights] for left in weights]
+    covariance_eigenvalues = symmetric_eigenvalues(covariance_grid)
+    covariance_psd_tolerance = 1e-12
+    covariance_is_psd = covariance_eigenvalues[0] >= -covariance_psd_tolerance
     daily_portfolio_vol = math.sqrt(sum(weights[i] * weights[j] * covariance_matrix[(i, j)] for i in weights for j in weights))
     contributions = []
     for holding in stock_holdings:
@@ -357,13 +454,18 @@ def run_analysis(root: Path) -> dict:
         values = trailing_values.get(holding.ticker, [])
         median_value = statistics.median(values) if values else 0.0
         position = holding.analytical_weight * nav
-        days_to_exit = position / (0.20 * median_value) if median_value else None
+        days_to_exit = position / (BASE_LIQUIDITY_PARTICIPATION * median_value) if median_value else None
+        stressed_capacity = STRESS_LIQUIDITY_PARTICIPATION * (1.0 - STRESS_VOLUME_HAIRCUT) * median_value
+        stressed_days_to_exit = position / stressed_capacity if stressed_capacity else None
         liquidity.append({
             "ticker": holding.ticker,
             "position_vnd": position,
             "median_60d_traded_value_vnd": median_value,
-            "participation_rate": 0.20,
+            "participation_rate": BASE_LIQUIDITY_PARTICIPATION,
             "days_to_exit": days_to_exit,
+            "stress_participation_rate": STRESS_LIQUIDITY_PARTICIPATION,
+            "stress_volume_haircut": STRESS_VOLUME_HAIRCUT,
+            "stressed_days_to_exit": stressed_days_to_exit,
         })
     liquidity.sort(key=lambda row: row["days_to_exit"] or math.inf, reverse=True)
 
@@ -383,9 +485,12 @@ def run_analysis(root: Path) -> dict:
     recent["ewma_94_annualised_volatility"] = ewma_volatility(recent_portfolio)
     for row in contributions:
         row["component_parametric_var_99"] = row["share_of_total_volatility"] * primary["parametric_var_99"]
-    ten_day_es_975 = recent["historical_es_975"] * math.sqrt(10)
+    ten_day_returns = overlapping_returns(recent_portfolio, 10)
+    ten_day_es_975_direct = historical_expected_shortfall(ten_day_returns, 0.975)
+    ten_day_es_975_sqrt_time = recent["historical_es_975"] * math.sqrt(10)
     backtest_result = backtest(full_dates, full_portfolio)
     coverage_test = kupiec_test(backtest_result["exceptions"], backtest_result["evaluation_observations"])
+    independence_test = christoffersen_test([row["exception"] for row in backtest_result["series"]], coverage_test["likelihood_ratio"])
 
     weighted_standalone_vol = sum(weights[ticker] * individual_vols[ticker] for ticker in weights) * math.sqrt(TRADING_DAYS)
     diversification_ratio = weighted_standalone_vol / primary["annualised_volatility"]
@@ -431,6 +536,8 @@ def run_analysis(root: Path) -> dict:
         "var_reduction": 1.0 - hedged["historical_var_99"] / primary["historical_var_99"],
         "volatility_reduction": 1.0 - hedged["annualised_volatility"] / primary["annualised_volatility"],
     }
+    initial_margin_vnd = contracts * contract_notional * INITIAL_MARGIN_RATE
+    stressed_margin_vnd = initial_margin_vnd * STRESS_MARGIN_MULTIPLIER
 
     rolling_risk = []
     for index in range(249, len(full_portfolio)):
@@ -454,12 +561,13 @@ def run_analysis(root: Path) -> dict:
     largest = max(stock_holdings, key=lambda item: item.analytical_weight)
     largest_sector, largest_sector_weight = max(sector_weights.items(), key=lambda item: item[1])
     maximum_dte = max(row["days_to_exit"] or math.inf for row in liquidity)
+    maximum_stressed_dte = max(row["stressed_days_to_exit"] or math.inf for row in liquidity)
     breaches = {
         "single_name": largest.analytical_weight > 0.11,
         "sector": largest_sector_weight > 0.40,
         "top_five": top_five > 0.45,
         "one_day_var_99": primary["historical_var_99"] > 0.035,
-        "ten_day_es_975": ten_day_es_975 > 0.12,
+        "ten_day_es_975": ten_day_es_975_direct > 0.12,
         "liquidity_days_to_exit": maximum_dte > 5,
         "backtest_green_zone": backtest_result["exceptions"] > 4,
     }
@@ -471,7 +579,10 @@ def run_analysis(root: Path) -> dict:
             "analytical_weight_total": sum(h.analytical_weight for h in holdings), "cash_weight": cash_weight,
         },
         "risk": {
-            "primary_500d": primary, "recent_250d": recent, "ten_day_es_975_sqrt_time": ten_day_es_975,
+            "primary_500d": primary, "recent_250d": recent,
+            "ten_day_es_975_direct": ten_day_es_975_direct,
+            "ten_day_es_975_direct_observations": len(ten_day_returns),
+            "ten_day_es_975_sqrt_time": ten_day_es_975_sqrt_time,
             "beta_to_vn30": beta, "tracking_error_annualised": statistics.stdev(tracking) * math.sqrt(TRADING_DAYS),
             "maximum_drawdown_full_replay": max_drawdown(full_portfolio),
             "diversification_ratio": diversification_ratio,
@@ -480,6 +591,11 @@ def run_analysis(root: Path) -> dict:
             "average_pairwise_correlation_recent_60d": recent_60d_correlation,
             "benchmark_annualised_volatility": statistics.stdev(primary_benchmark) * math.sqrt(TRADING_DAYS),
             "portfolio_benchmark_annualised_covariance": portfolio_market_covariance * TRADING_DAYS,
+            "covariance_validation": {
+                "is_positive_semidefinite": covariance_is_psd,
+                "minimum_eigenvalue": covariance_eigenvalues[0],
+                "tolerance": covariance_psd_tolerance,
+            },
         },
         "concentration": {
             "largest_name": largest.ticker, "largest_name_weight": largest.analytical_weight,
@@ -497,12 +613,21 @@ def run_analysis(root: Path) -> dict:
             "correlation_one_parametric_var_99": correlation_one_var,
             "reverse_stress_vn30_shock_for_15pct_loss": -0.15 / beta,
         },
-        "backtest": {**{key: value for key, value in backtest_result.items() if key != "series"}, "kupiec_pof": coverage_test},
+        "backtest": {
+            **{key: value for key, value in backtest_result.items() if key != "series"},
+            "scope": "rolling diagnostic on a reconstructed current-weight portfolio; not realised fund P&L",
+            "kupiec_pof": coverage_test,
+            "christoffersen": independence_test,
+        },
         "hedge": {
             "index_level_proxy": index_level, "contract_multiplier": 100_000,
             "contract_notional_vnd": contract_notional, "current_beta": beta, "target_beta": target_beta,
             "raw_short_contracts": raw_contracts, "rounded_short_contracts": contracts,
             "residual_beta": residual_beta,
+            "initial_margin_rate": INITIAL_MARGIN_RATE,
+            "initial_margin_vnd": initial_margin_vnd,
+            "stress_margin_multiplier": STRESS_MARGIN_MULTIPLIER,
+            "stressed_margin_vnd": stressed_margin_vnd,
             "comparison": hedge_comparison,
             "disclaimer": "Index-equivalent only; replace the index level with the selected VN30 futures settlement price before execution.",
         },
@@ -511,9 +636,21 @@ def run_analysis(root: Path) -> dict:
         "component_risk": contributions,
         "sector_risk": sector_risk_rows,
         "liquidity": liquidity,
+        "liquidity_stress": {
+            "base_participation_rate": BASE_LIQUIDITY_PARTICIPATION,
+            "stress_participation_rate": STRESS_LIQUIDITY_PARTICIPATION,
+            "stress_volume_haircut": STRESS_VOLUME_HAIRCUT,
+            "maximum_base_days_to_exit": maximum_dte,
+            "maximum_stressed_days_to_exit": maximum_stressed_dte,
+        },
         "backtest_series": backtest_result["series"],
         "rolling_risk": rolling_risk,
-        "model_methods": {"primary_500d": primary_methods, "recent_250d": recent_methods},
+        "model_methods": {
+            "primary_500d": primary_methods,
+            "recent_250d": recent_methods,
+            "proxy_controls_primary_500d": primary_proxy_controls,
+            "proxy_controls_recent_250d": recent_proxy_controls,
+        },
     }
 
 

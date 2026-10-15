@@ -19,7 +19,7 @@ SSB,Financials,2021-03-24,2026-09-30,1377,500,0,own,own
 SSI,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
 STB,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
 TCB,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
-TCX,Financials,2025-10-21,2026-09-30,234,233,0,sector_proxy,sector_proxy
+TCX,Financials,2025-10-21,2026-09-30,234,233,0,sector_proxy_excluding_self_peer_median_vol_floor,sector_proxy_excluding_self_peer_median_vol_floor
 VCB,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
 VHM,Real Estate,2019-01-02,2026-09-30,1931,500,0,own,own
 VIB,Financials,2019-01-02,2026-09-30,1924,500,7,own,own
@@ -27,5 +27,5 @@ VIC,Real Estate,2019-01-02,2026-09-30,1931,500,0,own,own
 VJC,Industrials,2019-01-02,2026-09-30,1931,500,0,own,own
 VNM,Consumer Staples,2019-01-02,2026-09-30,1931,500,0,own,own
 VPB,Financials,2019-01-02,2026-09-30,1931,500,0,own,own
-VPL,Consumer Discretionary,2025-05-13,2026-09-30,347,346,0,sector_proxy,own
+VPL,Consumer Discretionary,2025-05-13,2026-09-30,347,346,0,sector_proxy_excluding_self_peer_median_vol_floor,own
 VRE,Real Estate,2019-01-02,2026-09-30,1931,500,0,own,own

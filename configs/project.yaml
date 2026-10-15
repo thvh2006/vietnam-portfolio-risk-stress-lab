@@ -49,11 +49,19 @@ limits:
   ten_day_es_975_nav: 0.12
   maximum_days_to_exit: 5
   maximum_var_exceptions_250d_green: 4
+  ten_day_es_method: direct_overlapping_returns
 
 hedge:
   instrument: VN30_INDEX_FUTURES
   contract_multiplier_vnd_per_point: 100000
   objective: reduce_market_risk_without_rewriting_constituent_weights
+  initial_margin_rate: 0.17
+  stress_margin_multiplier: 1.50
+
+liquidity:
+  base_participation_rate: 0.20
+  stress_participation_rate: 0.10
+  stress_volume_haircut: 0.50
 
 governance:
   snapshot_positions: true

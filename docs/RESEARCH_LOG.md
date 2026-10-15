@@ -39,10 +39,30 @@ Does every holding have enough clean price and liquidity history to support the 
 ### Risk result
 
 - 500-day historical 99% VaR is 3.39% versus a 3.50% limit.
-- 10-day 97.5% ES is 12.28% versus a 12.00% limit.
+- The initial square-root-of-time 10-day 97.5% ES estimate was 12.28% versus a 12.00% limit; v1.1 supersedes this as the limit owner after a direct multi-day calculation.
 - Normal 99% VaR is 2.87%, while Cornish-Fisher VaR is 4.16% because the sample has -0.80 skewness and 7.87 excess kurtosis.
 - Rolling backtesting records 2 exceptions in 250 forecasts. The Kupiec POF p-value is 0.742.
 
 ### Investment outcome
 
-For a benchmark-tracking mandate, retain the unhedged exposure and approve a temporary ES exception. For an absolute-risk mandate, a 151-contract index-equivalent overlay reduces beta toward 0.70 and historical VaR to 2.46%, but raises tracking error to 6.51%. Execution still requires an actual contract, settlement price, margin, basis and roll policy.
+This preliminary outcome was superseded by the v1.1 direct 10-day method below. The hedge economics remain a contingency analysis rather than an executable recommendation.
+
+## 2026-10-15 - v1.1 model-governance correction
+
+### Research question
+
+Does the marginal 10-day ES breach survive a direct multi-day calculation, and are the methodology claims implemented in code?
+
+### Result
+
+- Direct overlapping 10-day 97.5% ES is 9.30% from 241 windows and passes the 12% limit.
+- Square-root-of-time ES is 12.30% and remains a conservative challenge, not the limit owner.
+- The 500-day covariance matrix passes the positive-semidefinite check.
+- TCX's 500-day proxy is scaled 1.33x to the peer-median volatility floor; VPL's floor does not require an uplift.
+- Stressed liquidity uses 10% participation and a 50% volume haircut; the worst days-to-exit rises from 0.40 to 1.61.
+- Kupiec, Christoffersen independence and conditional-coverage tests are not rejected at 5%.
+- VSDC's notice effective 18 September 2026 supplies a 17% minimum initial-margin input. The illustrated hedge requires VND4.93bn initially and VND7.39bn under a 1.5x buffer.
+
+### Governance decision
+
+Retain the unhedged portfolio under the current budget. Label the historical validation as a rolling current-weight diagnostic because current constituents and weights are replayed through history. Keep the futures overlay as a contingency rather than a recommendation.
