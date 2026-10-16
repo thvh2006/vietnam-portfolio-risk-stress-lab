@@ -1,7 +1,8 @@
 # Vietnam Portfolio Risk & Stress Lab
 
 [![Live dashboard](https://img.shields.io/badge/Live_dashboard-open-0f8c79)](https://vietnam-risk-stress-dashboard.solar-grebe-2278.chatgpt.site)
-[![Release](https://img.shields.io/badge/release-v1.1.0-18344a)](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/tag/v1.1.0)
+[![Release](https://img.shields.io/badge/release-v1.1.1-18344a)](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/tag/v1.1.1)
+[![quality](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/actions/workflows/quality.yml/badge.svg)](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/actions/workflows/quality.yml)
 
 ![Risk dashboard preview](assets/risk_dashboard_preview.png)
 
@@ -31,7 +32,7 @@ At the 30 September 2026 information cutoff:
 ## Published outputs
 
 - **[Live decision dashboard](https://vietnam-risk-stress-dashboard.solar-grebe-2278.chatgpt.site):** interactive hedge sizing, margin, approximate VaR and liquidity scenario controls. Historical risk outputs remain frozen to the reviewed snapshot.
-- **[GitHub Release v1.1.0](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/tag/v1.1.0):** downloadable review copies of the workbook and committee report.
+- **[GitHub Release v1.1.1](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/tag/v1.1.1):** downloadable review copies of the workbook and committee report.
 - [`Vietnam_Portfolio_Risk_Stress_Lab.xlsx`](Vietnam_Portfolio_Risk_Stress_Lab.xlsx): formula-linked decision workbook. Risk statistics are Python snapshots; limits, hedge sizing and margin liquidity are live Excel formulas.
 - [`Vietnam_Portfolio_Risk_Stress_Report.pdf`](output/pdf/Vietnam_Portfolio_Risk_Stress_Report.pdf): eight-page risk committee report.
 - `src/portfolio_risk/engine.py`: dependency-light independent Python risk engine.
@@ -44,7 +45,7 @@ At the 30 September 2026 information cutoff:
 
 1. Open the [live dashboard](https://vietnam-risk-stress-dashboard.solar-grebe-2278.chatgpt.site): the decision and seven limit results are visible above the fold.
 2. Change target beta, NAV, futures level, margin or participation rate and inspect the hedge economics immediately.
-3. Download the workbook or PDF from [Release v1.1.0](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/tag/v1.1.0) to audit the calculations and committee recommendation.
+3. Download the workbook or PDF from [Release v1.1.1](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/tag/v1.1.1) to audit the calculations and committee recommendation.
 
 ## Key result
 
@@ -78,6 +79,7 @@ The model challenge is intentionally visible. Normal 99% VaR is 2.87%, historica
 
 ```bash
 python3 scripts/run_risk.py
+python3 scripts/build_dashboard_snapshot.py --check
 python3 scripts/run_checks.py
 python3 -m unittest discover -s tests -v
 ```

@@ -1,5 +1,14 @@
 # Model Card — Vietnam Portfolio Risk & Stress Lab
 
+| Governance item | Status |
+|---|---|
+| Model version | v1.1.1 |
+| Information cutoff | 30 September 2026 |
+| Owner | Repository maintainer |
+| Use status | Independent portfolio demonstration |
+| Independent validation | Not performed; execution use is prohibited without independent validation |
+| Published surfaces | Python outputs, Excel workbook, committee report and public dashboard |
+
 ## Intended use
 
 Independent market-risk demonstration for a VND100 billion shadow mandate based on the publicly disclosed 30 September 2026 FUESSV30 portfolio. It supports risk-committee discussion of tail loss, concentration, liquidity and a VN30 futures overlay. It is not investment advice, a regulatory capital model or an executable hedge instruction.
@@ -45,6 +54,7 @@ Independent market-risk demonstration for a VND100 billion shadow mandate based 
 - Hedge beta reconciles to rounded contract notional and the 500-day return replay.
 - All 30 holdings have data coverage entries and the common cutoff is 30 September 2026.
 - Reproducibility checks run through `scripts/run_checks.py`.
+- The browser snapshot is generated from `risk_summary.json` and `project.yaml`; CI fails when published limits or memo results drift from those sources.
 
 ## Known limitations
 

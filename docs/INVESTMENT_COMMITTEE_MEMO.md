@@ -20,12 +20,12 @@ EWMA volatility is **14.23%**, well below the 20.22% 500-day estimate. This indi
 
 ## What drives the result
 
-- **VIC** is the largest constituent at 10.62% and contributes 13.57% of total portfolio volatility.
+- **VIC** is the largest constituent at 10.62% and contributes 13.54% of total portfolio volatility.
 - Financials are 39.83% of NAV, only 0.17 percentage point below the 40% sector limit.
 - HPG, MWG and FPT each contribute roughly 7.9%–8.4% of total volatility after VIC.
 - Portfolio beta to VN30 is 0.99 and annualised tracking error is 2.35%, consistent with a passive reference portfolio.
 - The 500-day annualised volatility estimate is 20.22%; the recent 250-day estimate is slightly higher at 20.63%.
-- Real Estate contributes **21.90% of total volatility** from a 16.88% weight, a risk-to-weight ratio of 1.30. Financials contributes 38.45% of volatility from 39.83% of weight.
+- Real Estate contributes **21.85% of total volatility** from a 16.88% weight, a risk-to-weight ratio of 1.29. Financials contributes 38.57% of volatility from 39.83% of weight.
 - The diversification ratio is 1.64, so diversification is meaningful but does not neutralise left-tail dependence.
 
 ## Hedge trade-off
@@ -38,11 +38,11 @@ The Kupiec unconditional-coverage p-value is **0.742**, the Christoffersen indep
 
 | Scenario | Portfolio result | VND100bn impact |
 |---|---:|---:|
-| Worst historical day | -7.23% | -VND7.23bn |
-| Worst historical 5-day window | -15.37% | -VND15.37bn |
-| 2022 deleveraging replay | -41.55% | -VND41.55bn |
+| Worst historical day | -7.24% | -VND7.24bn |
+| Worst historical 5-day window | -15.40% | -VND15.40bn |
+| 2022 deleveraging replay | -41.62% | -VND41.62bn |
 | Hypothetical sector shock | -17.64% | -VND17.64bn |
-| Reverse stress: VN30 shock for 15% loss | -15.18% | threshold |
+| Reverse stress: VN30 shock for 15% loss | -15.15% | threshold |
 
 Historical figures are **current-weight replays**, not realised FUESSV30 returns. The 2022 replay therefore answers how today's portfolio would have behaved under that return environment; it does not reconstruct past fund holdings.
 

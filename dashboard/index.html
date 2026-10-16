@@ -21,7 +21,7 @@
 
   <main id="top">
     <section class="hero" id="snapshot">
-      <div class="eyebrow"><span class="pulse"></span> Frozen market snapshot · 30 Sep 2026</div>
+      <div class="eyebrow"><span class="pulse"></span> Frozen market snapshot · <span id="snapshot-date">30 Sep 2026</span></div>
       <div class="hero-grid">
         <div>
           <p class="kicker">FUESSV30 current-weight shadow mandate</p>
@@ -31,15 +31,15 @@
         <aside class="decision">
           <span class="decision-label">Current decision</span>
           <strong>Retain unhedged</strong>
-          <p>All 7 controls pass. A 0.70 beta hedge cuts 99% VaR, but increases tracking error to 6.52%.</p>
-          <div class="decision-foot"><span>0</span> active breaches</div>
+          <p id="decision-copy">All 7 controls pass. A 0.70 beta hedge cuts 99% VaR, but increases tracking error to 6.52%.</p>
+          <div class="decision-foot"><span id="breach-count">0</span> active breaches</div>
         </aside>
       </div>
       <div class="kpi-strip">
-        <article><span>1-day historical VaR 99%</span><strong>3.40%</strong><small>VND 3.40bn</small></article>
-        <article><span>Direct 10-day ES 97.5%</span><strong>9.30%</strong><small>Primary limit metric</small></article>
-        <article><span>Beta to VN30</span><strong>0.99</strong><small>Near full market exposure</small></article>
-        <article><span>Backtest exceptions</span><strong>2 / 250</strong><small class="pass">● Basel green zone</small></article>
+        <article><span>1-day historical VaR 99%</span><strong id="kpi-var">3.40%</strong><small id="kpi-var-vnd">VND 3.40bn</small></article>
+        <article><span>Direct 10-day ES 97.5%</span><strong id="kpi-es">9.30%</strong><small>Primary limit metric</small></article>
+        <article><span>Beta to VN30</span><strong id="kpi-beta">0.99</strong><small>Near full market exposure</small></article>
+        <article><span>Backtest exceptions</span><strong id="kpi-backtest">2 / 250</strong><small class="pass" id="kpi-zone">● Basel green zone</small></article>
       </div>
     </section>
 
@@ -47,24 +47,15 @@
       <div class="panel risk-profile">
         <div class="section-heading"><div><p class="overline">Loss distribution</p><h2>Tail risk, two lenses</h2></div><span class="frozen">FROZEN</span></div>
         <p class="muted">Direct overlapping returns own the limit. Square-root-of-time is retained as a conservative model-risk challenge.</p>
-        <div class="metric-row"><span>Direct 10-day ES</span><div class="bar"><i style="width:32.6%"></i></div><b>9.30%</b></div>
-        <div class="metric-row challenge"><span>√t challenge ES</span><div class="bar"><i style="width:43.2%"></i></div><b>12.30%</b></div>
-        <div class="metric-row"><span>20-day historical stress</span><div class="bar"><i style="width:100%"></i></div><b>28.50%</b></div>
-        <div class="annotation"><span>Model choice</span><p>The 3.00pp gap is shown—not hidden—so reviewers can see horizon-scaling uncertainty.</p></div>
+        <div class="metric-row"><span>Direct 10-day ES</span><div class="bar"><i id="bar-direct"></i></div><b id="tail-direct">9.30%</b></div>
+        <div class="metric-row challenge"><span>√t challenge ES</span><div class="bar"><i id="bar-challenge"></i></div><b id="tail-challenge">12.30%</b></div>
+        <div class="metric-row"><span>20-day historical stress</span><div class="bar"><i id="bar-stress"></i></div><b id="tail-stress">28.50%</b></div>
+        <div class="annotation"><span>Model choice</span><p>The <span id="es-gap">3.00pp</span> gap is shown—not hidden—so reviewers can see horizon-scaling uncertainty.</p></div>
       </div>
 
       <div class="panel drivers">
         <div class="section-heading"><div><p class="overline">Component volatility</p><h2>Who owns the risk?</h2></div><span class="frozen">FROZEN</span></div>
-        <div class="driver-chart" aria-label="Top component risk contributions">
-          <div><span>VIC</span><i style="--v:100%"></i><b>13.54%</b></div>
-          <div><span>HPG</span><i style="--v:61.6%"></i><b>8.34%</b></div>
-          <div><span>MWG</span><i style="--v:61.2%"></i><b>8.29%</b></div>
-          <div><span>FPT</span><i style="--v:58.0%"></i><b>7.85%</b></div>
-          <div><span>VHM</span><i style="--v:43.4%"></i><b>5.87%</b></div>
-          <div><span>VPB</span><i style="--v:41.6%"></i><b>5.63%</b></div>
-          <div><span>TCB</span><i style="--v:39.0%"></i><b>5.28%</b></div>
-          <div><span>MSN</span><i style="--v:37.4%"></i><b>5.07%</b></div>
-        </div>
+        <div class="driver-chart" id="driver-chart" aria-label="Top component risk contributions"></div>
       </div>
     </section>
 
@@ -93,43 +84,37 @@
           <article><span>Stressed margin</span><strong id="stressed-margin">VND 7.39bn</strong></article>
           <article><span>Approx. 1-day parametric VaR</span><strong id="approx-var">2.11%</strong><small>Covariance approximation</small></article>
           <article><span>Estimated exit time</span><strong id="exit-days">0.40 days</strong><small>Scales with NAV / participation</small></article>
-          <article><span>Historical replay at β 0.70</span><strong>2.46%</strong><small>Exact only at reviewed base case</small></article>
+          <article><span>Historical replay at reviewed beta</span><strong id="historical-hedged-var">2.46%</strong><small>Exact only at reviewed base case</small></article>
         </div>
       </div>
     </section>
 
     <section class="section governance" id="governance">
-      <div class="section-heading"><div><p class="overline">Risk appetite</p><h2>Seven limits. Seven passes.</h2></div><span class="stamp">0 BREACHES</span></div>
-      <div class="limit-table" role="table" aria-label="Risk limit status">
+      <div class="section-heading"><div><p class="overline">Risk appetite</p><h2 id="limits-heading">Seven limits. Seven passes.</h2></div><span class="stamp" id="breach-stamp">0 BREACHES</span></div>
+      <div class="limit-table" id="limit-table" role="table" aria-label="Risk limit status">
         <div class="table-head" role="row"><span>Control</span><span>Actual</span><span>Limit</span><span>Status</span></div>
-        <div role="row"><span>Single-name weight</span><span>10.62%</span><span>≤ 12.00%</span><b>PASS</b></div>
-        <div role="row"><span>Sector weight</span><span>39.83%</span><span>≤ 40.00%</span><b>PASS</b></div>
-        <div role="row"><span>Top-five weight</span><span>39.95%</span><span>≤ 45.00%</span><b>PASS</b></div>
-        <div role="row"><span>1-day VaR 99%</span><span>3.40%</span><span>≤ 3.50%</span><b>PASS</b></div>
-        <div role="row"><span>Direct 10-day ES 97.5%</span><span>9.30%</span><span>≤ 12.00%</span><b>PASS</b></div>
-        <div role="row"><span>Liquidity exit time</span><span>0.40d</span><span>≤ 5.00d</span><b>PASS</b></div>
-        <div role="row"><span>Backtest zone</span><span>Green</span><span>Green</span><b>PASS</b></div>
       </div>
 
       <div class="validation-grid">
-        <article><span>Kupiec coverage</span><strong>p = 0.742</strong><small>No rejection at 5%</small></article>
-        <article><span>Independence</span><strong>p = 0.857</strong><small>No exception clustering</small></article>
-        <article><span>Conditional coverage</span><strong>p = 0.932</strong><small>Joint validation passes</small></article>
-        <article><span>Covariance matrix</span><strong>PSD PASS</strong><small>Eigenvalue control</small></article>
+        <article><span>Kupiec coverage</span><strong id="kupiec-value">p = 0.742</strong><small>No rejection at 5%</small></article>
+        <article><span>Independence</span><strong id="independence-value">p = 0.857</strong><small>No exception clustering</small></article>
+        <article><span>Conditional coverage</span><strong id="coverage-value">p = 0.932</strong><small>Joint validation passes</small></article>
+        <article><span>Covariance matrix</span><strong id="psd-value">PSD PASS</strong><small>Eigenvalue control</small></article>
       </div>
     </section>
 
     <section class="downloads">
       <div><p class="overline">Reproducible deliverables</p><h2>Inspect the model,<br>not just the headline.</h2></div>
       <div class="download-links">
-        <a href="https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/download/v1.1.0/Vietnam_Portfolio_Risk_Stress_Lab.xlsx">Download Excel <span>↘</span></a>
-        <a href="https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/download/v1.1.0/Vietnam_Portfolio_Risk_Stress_Report.pdf">Read committee report <span>↘</span></a>
+        <a href="https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/download/v1.1.1/Vietnam_Portfolio_Risk_Stress_Lab.xlsx">Download Excel <span>↘</span></a>
+        <a href="https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/download/v1.1.1/Vietnam_Portfolio_Risk_Stress_Report.pdf">Read committee report <span>↘</span></a>
         <a href="https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/blob/main/MODEL_CARD.md">Open model card <span>↗</span></a>
       </div>
     </section>
   </main>
 
-  <footer><span>Vietnam Portfolio Risk &amp; Stress Lab · v1.1.0</span><span>Educational case study · Not investment advice</span></footer>
+  <footer><span>Vietnam Portfolio Risk &amp; Stress Lab · <span id="site-version">v1.1.1</span></span><span>Educational case study · Not investment advice</span></footer>
+  <script src="snapshot.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

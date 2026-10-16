@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.1 - 2026-10-16
+
+- Made the public dashboard consume a generated snapshot from the reviewed risk output and policy configuration.
+- Corrected the public single-name limit from 12.00% to the approved 11.00%.
+- Reconciled the investment-committee memo to the current risk, attribution and stress outputs.
+- Added CI controls that fail when the dashboard snapshot or committee memo drifts from the model output.
+- Published the live dashboard source and updated release links as one tagged repository state.
+
 ## v1.1.0 - 2026-10-15
 
 - Replaced square-root-of-time 10-day ES as the limit owner with direct overlapping 10-day ES; retained sqrt-time as a challenge.

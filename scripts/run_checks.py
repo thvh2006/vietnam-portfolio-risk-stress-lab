@@ -53,4 +53,25 @@ assert result["model_methods"]["recent_250d"]["VPL"] == "own"
 assert all(control["applied_scale"] >= 1.0 for control in result["model_methods"]["proxy_controls_primary_500d"].values())
 assert result["liquidity_stress"]["maximum_stressed_days_to_exit"] >= result["liquidity_stress"]["maximum_base_days_to_exit"]
 close(result["hedge"]["initial_margin_vnd"], result["hedge"]["rounded_short_contracts"] * result["hedge"]["contract_notional_vnd"] * result["hedge"]["initial_margin_rate"])
+
+# Published-surface controls: prevent the dashboard and committee memo from
+# drifting away from the reviewed engine output.
+snapshot_source = (ROOT / "dashboard/snapshot.js").read_text(encoding="utf-8")
+snapshot = json.loads(snapshot_source.removeprefix("window.RISK_SNAPSHOT = ").removesuffix(";\n"))
+single_name_limit = next(row for row in snapshot["limits"] if row["key"] == "single_name")
+close(single_name_limit["actual"], result["concentration"]["largest_name_weight"])
+close(single_name_limit["limit"], 0.11)
+assert snapshot["version"] == "v1.1.1"
+assert snapshot["hedge"]["contracts"] == result["hedge"]["rounded_short_contracts"]
+close(snapshot["risk"]["directTenDayEs975"], result["risk"]["ten_day_es_975_direct"])
+assert all(row["status"] == "PASS" for row in snapshot["limits"])
+
+memo = (ROOT / "docs/INVESTMENT_COMMITTEE_MEMO.md").read_text(encoding="utf-8")
+assert "13.54% of total portfolio volatility" in memo
+assert "21.85% of total volatility" in memo
+assert "38.57% of volatility" in memo
+assert "| Worst historical day | -7.24% | -VND7.24bn |" in memo
+assert "| Worst historical 5-day window | -15.40% | -VND15.40bn |" in memo
+assert "| 2022 deleveraging replay | -41.62% | -VND41.62bn |" in memo
+assert "| Reverse stress: VN30 shock for 15% loss | -15.15% | threshold |" in memo
 print("All reproducibility, coverage and risk-allocation checks passed.")
