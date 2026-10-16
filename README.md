@@ -1,5 +1,8 @@
 # Vietnam Portfolio Risk & Stress Lab
 
+[![Live dashboard](https://img.shields.io/badge/Live_dashboard-open-0f8c79)](https://vietnam-risk-stress-dashboard.solar-grebe-2278.chatgpt.site)
+[![Release](https://img.shields.io/badge/release-v1.1.0-18344a)](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/tag/v1.1.0)
+
 ![Risk dashboard preview](assets/risk_dashboard_preview.png)
 
 Point-in-time market-risk case built on the publicly disclosed SSIAM VN30 ETF portfolio. The project scales the 30-stock portfolio to a VND100 billion shadow mandate and asks whether its market, concentration and liquidity risks fit an explicit risk budget.
@@ -27,6 +30,8 @@ At the 30 September 2026 information cutoff:
 
 ## Published outputs
 
+- **[Live decision dashboard](https://vietnam-risk-stress-dashboard.solar-grebe-2278.chatgpt.site):** interactive hedge sizing, margin, approximate VaR and liquidity scenario controls. Historical risk outputs remain frozen to the reviewed snapshot.
+- **[GitHub Release v1.1.0](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/tag/v1.1.0):** downloadable review copies of the workbook and committee report.
 - [`Vietnam_Portfolio_Risk_Stress_Lab.xlsx`](Vietnam_Portfolio_Risk_Stress_Lab.xlsx): formula-linked decision workbook. Risk statistics are Python snapshots; limits, hedge sizing and margin liquidity are live Excel formulas.
 - [`Vietnam_Portfolio_Risk_Stress_Report.pdf`](output/pdf/Vietnam_Portfolio_Risk_Stress_Report.pdf): eight-page risk committee report.
 - `src/portfolio_risk/engine.py`: dependency-light independent Python risk engine.
@@ -37,9 +42,9 @@ At the 30 September 2026 information cutoff:
 
 ## Three-minute review
 
-1. Open the dashboard preview above: all seven approved limits pass under the limit-owning methods.
-2. Open the workbook: change target beta, futures level or margin inputs and see contract sizing and liquidity update.
-3. Read the PDF decision page: retain the unhedged exposure under the current budget; keep the hedge as a contingency.
+1. Open the [live dashboard](https://vietnam-risk-stress-dashboard.solar-grebe-2278.chatgpt.site): the decision and seven limit results are visible above the fold.
+2. Change target beta, NAV, futures level, margin or participation rate and inspect the hedge economics immediately.
+3. Download the workbook or PDF from [Release v1.1.0](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/tag/v1.1.0) to audit the calculations and committee recommendation.
 
 ## Key result
 

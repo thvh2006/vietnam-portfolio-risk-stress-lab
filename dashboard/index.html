@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive Vietnam portfolio risk, stress testing, and VN30 futures hedge dashboard.">
+  <title>Vietnam Portfolio Risk &amp; Stress Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Risk Lab home"><span class="brand-mark">VR</span><span>Risk &amp; Stress Lab</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#snapshot">Snapshot</a><a href="#scenario">Live scenario</a><a href="#governance">Governance</a>
+    </nav>
+    <a class="repo-link" href="https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab" target="_blank" rel="noreferrer">View model ↗</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="snapshot">
+      <div class="eyebrow"><span class="pulse"></span> Frozen market snapshot · 30 Sep 2026</div>
+      <div class="hero-grid">
+        <div>
+          <p class="kicker">FUESSV30 current-weight shadow mandate</p>
+          <h1>Risk is inside budget.<br><span>Hedging remains optional.</span></h1>
+          <p class="lede">A committee-ready view of market risk, concentration, liquidity and a VN30 futures overlay—built from a reproducible Python engine, not spreadsheet-only logic.</p>
+        </div>
+        <aside class="decision">
+          <span class="decision-label">Current decision</span>
+          <strong>Retain unhedged</strong>
+          <p>All 7 controls pass. A 0.70 beta hedge cuts 99% VaR, but increases tracking error to 6.52%.</p>
+          <div class="decision-foot"><span>0</span> active breaches</div>
+        </aside>
+      </div>
+      <div class="kpi-strip">
+        <article><span>1-day historical VaR 99%</span><strong>3.40%</strong><small>VND 3.40bn</small></article>
+        <article><span>Direct 10-day ES 97.5%</span><strong>9.30%</strong><small>Primary limit metric</small></article>
+        <article><span>Beta to VN30</span><strong>0.99</strong><small>Near full market exposure</small></article>
+        <article><span>Backtest exceptions</span><strong>2 / 250</strong><small class="pass">● Basel green zone</small></article>
+      </div>
+    </section>
+
+    <section class="section grid-2">
+      <div class="panel risk-profile">
+        <div class="section-heading"><div><p class="overline">Loss distribution</p><h2>Tail risk, two lenses</h2></div><span class="frozen">FROZEN</span></div>
+        <p class="muted">Direct overlapping returns own the limit. Square-root-of-time is retained as a conservative model-risk challenge.</p>
+        <div class="metric-row"><span>Direct 10-day ES</span><div class="bar"><i style="width:32.6%"></i></div><b>9.30%</b></div>
+        <div class="metric-row challenge"><span>√t challenge ES</span><div class="bar"><i style="width:43.2%"></i></div><b>12.30%</b></div>
+        <div class="metric-row"><span>20-day historical stress</span><div class="bar"><i style="width:100%"></i></div><b>28.50%</b></div>
+        <div class="annotation"><span>Model choice</span><p>The 3.00pp gap is shown—not hidden—so reviewers can see horizon-scaling uncertainty.</p></div>
+      </div>
+
+      <div class="panel drivers">
+        <div class="section-heading"><div><p class="overline">Component volatility</p><h2>Who owns the risk?</h2></div><span class="frozen">FROZEN</span></div>
+        <div class="driver-chart" aria-label="Top component risk contributions">
+          <div><span>VIC</span><i style="--v:100%"></i><b>13.54%</b></div>
+          <div><span>HPG</span><i style="--v:61.6%"></i><b>8.34%</b></div>
+          <div><span>MWG</span><i style="--v:61.2%"></i><b>8.29%</b></div>
+          <div><span>FPT</span><i style="--v:58.0%"></i><b>7.85%</b></div>
+          <div><span>VHM</span><i style="--v:43.4%"></i><b>5.87%</b></div>
+          <div><span>VPB</span><i style="--v:41.6%"></i><b>5.63%</b></div>
+          <div><span>TCB</span><i style="--v:39.0%"></i><b>5.28%</b></div>
+          <div><span>MSN</span><i style="--v:37.4%"></i><b>5.07%</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scenario" id="scenario">
+      <div class="scenario-intro">
+        <p class="overline light">Interactive decision layer</p>
+        <h2>Size the hedge before<br>you recommend it.</h2>
+        <p>Change the mandate, margin or liquidity assumptions. Outputs recalculate in-browser; historical risk statistics remain frozen to the reviewed Python snapshot.</p>
+        <div class="legend"><span><i class="dot live"></i> Live calculation</span><span><i class="dot fixed"></i> Reviewed snapshot</span></div>
+      </div>
+
+      <div class="control-board">
+        <form id="scenario-form">
+          <label>Shadow NAV <span id="nav-label">VND 100bn</span><input id="nav" type="range" min="25" max="500" step="5" value="100"></label>
+          <label>Target beta <span id="beta-label">0.70</span><input id="target-beta" type="range" min="0.20" max="1.00" step="0.05" value="0.70"></label>
+          <div class="input-grid">
+            <label>VN30 futures level<input id="index-level" type="number" min="100" step="0.01" value="1906.81"></label>
+            <label>Initial margin<input id="margin-rate" type="number" min="1" max="100" step="1" value="17"><em>%</em></label>
+            <label>Margin stress<input id="margin-stress" type="number" min="1" max="5" step="0.1" value="1.5"><em>×</em></label>
+            <label>Daily participation<input id="participation" type="number" min="1" max="100" step="1" value="20"><em>%</em></label>
+          </div>
+        </form>
+        <div class="outputs" aria-live="polite">
+          <article class="hero-output"><span>Short VN30 contracts</span><strong id="contracts">152</strong><small id="residual-beta">Residual beta 0.700</small></article>
+          <article><span>Initial margin</span><strong id="initial-margin">VND 4.93bn</strong></article>
+          <article><span>Stressed margin</span><strong id="stressed-margin">VND 7.39bn</strong></article>
+          <article><span>Approx. 1-day parametric VaR</span><strong id="approx-var">2.11%</strong><small>Covariance approximation</small></article>
+          <article><span>Estimated exit time</span><strong id="exit-days">0.40 days</strong><small>Scales with NAV / participation</small></article>
+          <article><span>Historical replay at β 0.70</span><strong>2.46%</strong><small>Exact only at reviewed base case</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section governance" id="governance">
+      <div class="section-heading"><div><p class="overline">Risk appetite</p><h2>Seven limits. Seven passes.</h2></div><span class="stamp">0 BREACHES</span></div>
+      <div class="limit-table" role="table" aria-label="Risk limit status">
+        <div class="table-head" role="row"><span>Control</span><span>Actual</span><span>Limit</span><span>Status</span></div>
+        <div role="row"><span>Single-name weight</span><span>10.62%</span><span>≤ 12.00%</span><b>PASS</b></div>
+        <div role="row"><span>Sector weight</span><span>39.83%</span><span>≤ 40.00%</span><b>PASS</b></div>
+        <div role="row"><span>Top-five weight</span><span>39.95%</span><span>≤ 45.00%</span><b>PASS</b></div>
+        <div role="row"><span>1-day VaR 99%</span><span>3.40%</span><span>≤ 3.50%</span><b>PASS</b></div>
+        <div role="row"><span>Direct 10-day ES 97.5%</span><span>9.30%</span><span>≤ 12.00%</span><b>PASS</b></div>
+        <div role="row"><span>Liquidity exit time</span><span>0.40d</span><span>≤ 5.00d</span><b>PASS</b></div>
+        <div role="row"><span>Backtest zone</span><span>Green</span><span>Green</span><b>PASS</b></div>
+      </div>
+
+      <div class="validation-grid">
+        <article><span>Kupiec coverage</span><strong>p = 0.742</strong><small>No rejection at 5%</small></article>
+        <article><span>Independence</span><strong>p = 0.857</strong><small>No exception clustering</small></article>
+        <article><span>Conditional coverage</span><strong>p = 0.932</strong><small>Joint validation passes</small></article>
+        <article><span>Covariance matrix</span><strong>PSD PASS</strong><small>Eigenvalue control</small></article>
+      </div>
+    </section>
+
+    <section class="downloads">
+      <div><p class="overline">Reproducible deliverables</p><h2>Inspect the model,<br>not just the headline.</h2></div>
+      <div class="download-links">
+        <a href="https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/download/v1.1.0/Vietnam_Portfolio_Risk_Stress_Lab.xlsx">Download Excel <span>↘</span></a>
+        <a href="https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/download/v1.1.0/Vietnam_Portfolio_Risk_Stress_Report.pdf">Read committee report <span>↘</span></a>
+        <a href="https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/blob/main/MODEL_CARD.md">Open model card <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>Vietnam Portfolio Risk &amp; Stress Lab · v1.1.0</span><span>Educational case study · Not investment advice</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
