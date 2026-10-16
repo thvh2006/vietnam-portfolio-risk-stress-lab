@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import math
 import re
 from pathlib import Path
 
@@ -102,6 +103,35 @@ def render(snapshot: dict) -> str:
     return f"window.RISK_SNAPSHOT = {payload};\n"
 
 
+def parse_rendered_snapshot(source: str) -> dict:
+    prefix = "window.RISK_SNAPSHOT = "
+    suffix = ";\n"
+    if not source.startswith(prefix) or not source.endswith(suffix):
+        raise AssertionError("dashboard/snapshot.js has an invalid wrapper")
+    return json.loads(source[len(prefix):-len(suffix)])
+
+
+def assert_semantically_equal(actual, expected, path: str = "snapshot") -> None:
+    """Compare generated data while tolerating cross-Python float noise."""
+    if isinstance(expected, float):
+        assert isinstance(actual, (int, float)) and math.isclose(
+            actual, expected, rel_tol=1e-12, abs_tol=1e-12
+        ), f"{path} differs: {actual!r} != {expected!r}"
+        return
+    assert type(actual) is type(expected), f"{path} has the wrong type"
+    if isinstance(expected, dict):
+        assert actual.keys() == expected.keys(), f"{path} has different keys"
+        for key in expected:
+            assert_semantically_equal(actual[key], expected[key], f"{path}.{key}")
+        return
+    if isinstance(expected, list):
+        assert len(actual) == len(expected), f"{path} has a different length"
+        for index, item in enumerate(expected):
+            assert_semantically_equal(actual[index], item, f"{path}[{index}]")
+        return
+    assert actual == expected, f"{path} differs: {actual!r} != {expected!r}"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true", help="fail when the committed snapshot is stale")
@@ -109,7 +139,8 @@ def main() -> None:
     expected = render(build_snapshot())
     if args.check:
         assert OUTPUT_PATH.exists(), f"missing generated snapshot: {OUTPUT_PATH}"
-        assert OUTPUT_PATH.read_text(encoding="utf-8") == expected, "dashboard/snapshot.js is stale; rebuild it"
+        committed = parse_rendered_snapshot(OUTPUT_PATH.read_text(encoding="utf-8"))
+        assert_semantically_equal(committed, build_snapshot())
         print("Dashboard snapshot matches reviewed model outputs and policy limits.")
         return
     OUTPUT_PATH.write_text(expected, encoding="utf-8")
