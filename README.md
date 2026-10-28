@@ -40,12 +40,14 @@ At the 30 September 2026 information cutoff:
 - [`data/DATA_MANIFEST.md`](data/DATA_MANIFEST.md): frozen evidence-set hashes and retrieval cutoff.
 - [`docs/INVESTMENT_COMMITTEE_MEMO.md`](docs/INVESTMENT_COMMITTEE_MEMO.md): decision memo.
 - [`MODEL_CARD.md`](MODEL_CARD.md): intended use, validation, limitations and monitoring policy.
+- [`notebooks/01_risk_engine_walkthrough.ipynb`](notebooks/01_risk_engine_walkthrough.ipynb): executed evidence audit covering holdings, component risk, liquidity, backtesting, hedge economics, decision gates and limitations.
 
 ## Three-minute review
 
 1. Open the [live dashboard](https://vietnam-risk-stress-dashboard.solar-grebe-2278.chatgpt.site): the decision and seven limit results are visible above the fold.
 2. Change target beta, NAV, futures level, margin or participation rate and inspect the hedge economics immediately.
-3. Download the workbook or PDF from [Release v1.1.1](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/tag/v1.1.1) to audit the calculations and committee recommendation.
+3. Open the [executed risk-engine walkthrough](notebooks/01_risk_engine_walkthrough.ipynb) to inspect the committed analytical evidence in-browser.
+4. Download the workbook or PDF from [Release v1.1.1](https://github.com/thvh2006/vietnam-portfolio-risk-stress-lab/releases/tag/v1.1.1) to audit the calculations and committee recommendation.
 
 ## Key result
 
